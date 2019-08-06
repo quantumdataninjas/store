@@ -36,22 +36,21 @@ fn main() -> std::io::Result<()> {
             .wrap(IdentityService::new(
                 CookieIdentityPolicy::new(utils::SECRET_KEY.as_bytes())
                     .domain(domain.as_str())
-                    .name("auth")
+                    .name("cookie_name")
                     .path("/")
                     .max_age_time(chrono::Duration::days(1))
                     // make true
                     .secure(false), // this can only be true if you have https
             ))
             .data(web::JsonConfig::default().limit(4096))
-            .service(
-                web::scope("/api")
-                    .service(web::resource("/auth")
+                .service(web::resource("/api")
+                    .service(web::resource("/users")
+                        .route(web::get().to(||{})),
                         .route(web::post().to(||{}))
                         .route(web::delete().to(||{}))
-                        .route(web::get().to(||{})),
-                    ),
-            )
+                    )
+                )
     })
-    .bind("127.0.0.1:3000")?
+    .bind("127.0.0.1:3000")
     .run()
 }
