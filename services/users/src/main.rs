@@ -35,25 +35,20 @@ fn main() -> std::io::Result<()> {
             .wrap(middleware::Logger::default())
             .wrap(IdentityService::new(
                 CookieIdentityPolicy::new(utils::SECRET_KEY.as_bytes())
+                    .domain(domain.as_str())
                     .name("auth")
                     .path("/")
-                    .domain(domain.as_str())
                     .max_age_time(chrono::Duration::days(1))
+                    // make true
                     .secure(false), // this can only be true if you have https
             ))
             .data(web::JsonConfig::default().limit(4096))
             .service(
                 web::scope("/api")
-                    .service(web::resource("/invitation")
-                            .route(web::post().to(||{})),
-                    )
-                    .service(web::resource("/register/{invitation_id}")
-                            .route(web::post().to(||{})),
-                    )
                     .service(web::resource("/auth")
-                            .route(web::post().to(||{}))
-                            .route(web::delete().to(||{}))
-                            .route(web::get().to(||{})),
+                        .route(web::post().to(||{}))
+                        .route(web::delete().to(||{}))
+                        .route(web::get().to(||{})),
                     ),
             )
     })
