@@ -11,7 +11,10 @@ use diesel::prelude::*;
 use diesel::r2d2::{self, ConnectionManager};
 
 
-mod api;
+mod api {
+    mod models;
+    mod utils;
+};
 
 
 fn main() -> std::io::Result<()> {
@@ -21,7 +24,7 @@ fn main() -> std::io::Result<()> {
     let database_url = std::env::var("DATABASE_URL").expect("DATABASE_URL must be set");
 
     let manager = ConnectionManager::<PgConnection>::new(database_url);
-    let pool: api::models::Pool = r2d2::Pool::builder()
+    let pool: models::Pool = r2d2::Pool::builder()
         .build(manager)
         .expect("Failed to create pool.");
     let domain: String = std::env::var("DOMAIN").unwrap_or_else(|_| "localhost".to_string());
