@@ -49,7 +49,7 @@ class User(db.Model):
     lastlogout = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=False)
     created_at = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=False)
 
-    def __init__(self, username, email):
+    def __init__(self, email, subscription,terms_and_conditions, firstname, middlename, lastname, address1, address2, city, state, zipcode, country, phone, birthmonth, brithday, birthyear, online, lastlogin, lastlogout, created_at):
         self.email = email
         self.subscription = subscription
         self.terms_and_conditions = terms_and_conditions
@@ -70,6 +70,9 @@ class User(db.Model):
         self.lastlogin = lastlogin
         self.lastlogout = lastlogout
         self.created_at = created_at
+
+    def __repr__(self):
+        return '<User {}>'.format(self.email)
 
 
 class UsersPing(Resource):
