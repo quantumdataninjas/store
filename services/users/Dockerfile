@@ -1,9 +1,10 @@
 FROM python:3.7.4-alpine
 
 RUN apk update && \
-    apk add --virtual build-deps gcc python-dev musl-dev && \
+    apk add --virtual build-deps gcc python3-dev libffi-dev musl-dev && \
     apk add postgresql-dev && \
-    apk add netcat-openbsd
+    apk add netcat-openbsd && \
+    apk upgrade
 
 WORKDIR /usr/src/app
 
