@@ -12,6 +12,8 @@ api = Api(app)
 app_settings = os.getenv('APP_SETTINGS')
 app.config.from_object(app_settings)
 
+db = SQLAlchemy(app)
+
 
 class SimpleUser(db.Model):
     __tablename__ = 'simple_users'
