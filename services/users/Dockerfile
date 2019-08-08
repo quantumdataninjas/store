@@ -1,23 +1,15 @@
-# Cargo Build Stage
-FROM rust:1.36-slim as cargo-build
+# base image
+FROM python:3.7.4-alpine
 
+# set working directory
 WORKDIR /usr/src/app
 
-COPY Cargo.toml Cargo.toml
+# add and install requirements
+COPY ./requirements.txt /usr/src/app/requirements.txt
+RUN pip install -r requirements.txt
 
-RUN mkdir src/
-RUN echo "fn main() {println!(\"if you see this, the build broke\")}" > src/main.rs
-RUN cargo build --release
-RUN cargo rm -f target/release/deps/app*
+# add app
+COPY . /usr/src/app
 
-COPY . .
-RUN cargo build --release
-RUN cargo install --path .
-
-
-# Final Stage
-FROM alpine:latest
-
-COPY --from=cargo-build /usr/local/cargo/bin/app /usr/local/bin/app
-
-CMD ["app"]
+# run server
+CMD python manage.py run -h 0.0.0.0
