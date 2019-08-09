@@ -13,5 +13,6 @@ release:
     - ./entrypoint-prod.sh
   image: users
 run:
-  worker: gunicorn -b 0.0.0.0:5000 manage:app
-  image: users
+  worker:
+    command:
+      - gunicorn -b 0.0.0.0:5000 manage:app
