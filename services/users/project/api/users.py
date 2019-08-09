@@ -9,7 +9,8 @@ users_blueprint = Blueprint('users', __name__)
 api = Api(users_blueprint)
 
 
-class UsersPing(Resource):
+class Ping(Resource):
+
     def get(self):
         return {
         'status': 'success',
@@ -17,7 +18,8 @@ class UsersPing(Resource):
     }
 
 
-class UsersSubscribe(Resource):
+class Subscribe(Resource):
+
     def post(self):
         post_data = request.get_json()
         if not post_data:
@@ -40,15 +42,16 @@ class UsersSubscribe(Resource):
                     'status': 'fail',
                     'message': f'User {email} is already subscribed.'
                 }, 400
-        except exc.IntegrityError:
+        except exc.IntegrityError as ie:
             db.session.rollback()
             return {
                 'status': 'fail',
-                'message': 'Invalid payload.'
+                'message': f'Integrity Error: {ie}'
             }, 400
 
 
-class UsersRegister(Resource):
+class Register(Resource):
+
     def post(self):
         post_data = request.get_json()
         if not post_data:
@@ -116,19 +119,31 @@ class UsersRegister(Resource):
                     'status': 'fail',
                     'message': f'User {email} already exists.'
                 }, 400
-        except exc.IntegrityError:
+        except exc.IntegrityError as ie:
             db.session.rollback()
             return {
                 'status': 'fail',
-                'message': 'Invalid payload.'
+                'message': f'Integrity Error: {ie}'
             }, 400
 
 
-class SimpleUsers(Resource):
-    def get(self, user_id):
+class GetSimpleUsers(Resource):
+
+    def get(self):
+        """Get all simple users"""
+        return {
+            'status': 'success',
+            'data': {
+                'simple_users': [simple_user.to_json() for simple_user in SimpleUser.query.all()]
+            }
+        }, 200
+
+class GetSimpleUser(Resource):
+
+    def get(self, simple_user_id):
         """Get single simple_user details"""
         try:
-            simple_user = SimpleUser.query.filter_by(id=int(user_id)).first()
+            simple_user = SimpleUser.query.filter_by(id=int(simple_user_id)).first()
             if not simple_user:
                 return {
                     'status': 'fail',
@@ -143,41 +158,81 @@ class SimpleUsers(Resource):
                         'subscribed': simple_user.subscribed,
                         'registered': simple_user.registered,
                         'online': simple_user.online,
-                        'lastlogin': simple_user.lastlogin,
-                        'lastlogout': simple_user.lastlogout,
-                        'created_at': simple_user.created_at
+                        'lastlogin': str(simple_user.lastlogin),
+                        'lastlogout': str(simple_user.lastlogout),
+                        'created_at': str(simple_user.created_at)
                     }
                 }, 200
-        except ValueError:
-            return response_object, 404
+        except ValueError as ve:
+            return {
+                'status': 'fail',
+                'message': f'Value Error: {ve}'
+            }, 404
 
 
-class Users(Resource):
+class GetUsers(Resource):
+
+    def get(self):
+        """Get all users"""
+        return {
+            'status': 'success',
+            'data': {
+                'users': [user.to_json() for user in User.query.all()]
+            }
+        }, 200
+
+
+class GetUser(Resource):
+
     def get(self, user_id):
         """Get single user details"""
-        response_object = {
-            'status': 'fail',
-            'message': 'User does not exist'
-        }
         try:
             user = User.query.filter_by(id=int(user_id)).first()
             if not user:
-                return response_object, 404
+                return {
+                    'status': 'fail',
+                    'message': 'User does not exist.'
+                }, 404
             else:
-                response_object = {
+                return {
                     'status': 'success',
                     'data': {
                         'id': user.id,
-                        'username': user.username,
                         'email': user.email,
-                        'active': user.active
+                        'subscribed': user.subscribed,
+                        'terms_and_conditions': user.terms_and_conditions,
+                        # 'verified': user.verified,
+                        # 'hash': user.hash,
+                        'firstname': user.firstname,
+                        'lastname': user.lastname,
+                        'address1': user.address1,
+                        'address2': user.address2,
+                        'city': user.city,
+                        'state': user.state,
+                        'zipcode': user.zipcode,
+                        'country': user.country,
+                        'phone': user.phone,
+                        'birthmonth': user.birthmonth,
+                        'birthday': user.birthday,
+                        'birthyear': user.birthyear,
+                        'online': user.online,
+                        'lastlogin': str(user.lastlogin),
+                        'lastlogout': str(user.lastlogout),
+                        'created_at': str(user.created_at)
                     }
-                }
-                return response_object, 200
-        except ValueError:
-            return response_object, 404
+                }, 200
+        except ValueError as ve:
+            return {
+                'status': 'fail',
+                'message': f'Value Error: {ve}.'
+            }, 404
 
 
-api.add_resource(UsersPing, '/users/ping')
-api.add_resource(UsersSubscribe, '/users/subscribe')
-api.add_resource(UsersRegister, '/users/register')
+
+api.add_resource(Ping, '/users/ping')
+api.add_resource(Subscribe, '/users/subscribe')
+api.add_resource(Register, '/users/register')
+api.add_resource(GetSimpleUsers, '/users/simple')
+api.add_resource(GetSimpleUser, '/users/simple/<simple_user_id>')
+api.add_resource(GetUsers, '/users')
+api.add_resource(GetUser, '/users', '/users/<user_id>')
