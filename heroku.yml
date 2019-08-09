@@ -5,7 +5,6 @@ setup:
 build:
   docker:
     users: services/users/Dockerfile
-    worker: worker/Dockerfile
   config:
     FLASK_ENV: development
     FOO: bar
