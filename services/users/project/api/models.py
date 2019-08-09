@@ -4,6 +4,7 @@ from project import db
 
 
 class SimpleUser(db.Model):
+
     __tablename__ = 'emails'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -24,8 +25,21 @@ class SimpleUser(db.Model):
     def __repr__(self):
         return '<Email {}>'.format(self.email)
 
+    def to_json(self):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'subscribed': self.subscribed,
+            'registered': self.registered,
+            'online': self.online,
+            'lastlogin': str(self.lastlogin),
+            'lastlogout': str(self.lastlogout),
+            'created_at': str(self.created_at)
+        }
+
 
 class User(db.Model):
+
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -33,7 +47,8 @@ class User(db.Model):
     # ip = db.Column(db.String(15), nullable=False)
     subscribed = db.Column(db.Boolean(), default=True, nullable=False)
     terms_and_conditions = db.Column(db.Boolean(), default=False, nullable=False)
-    verified = db.Column(db.Boolean(), default=False, nullable=False)
+    # verified = db.Column(db.Boolean(), default=False, nullable=False)
+    # hash = db.Column(db.String(128), nullable=False)
     firstname = db.Column(db.String(128), nullable=False)
     middlename = db.Column(db.String(128), nullable=True)
     lastname = db.Column(db.String(128), nullable=False)
@@ -72,3 +87,30 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.email)
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'email': self.email,
+            'subscribed': self.subscribed,
+            'terms_and_conditions': self.terms_and_conditions,
+            # 'verified': self.verified,
+            # 'hash': self.hash,
+            'firstname': self.firstname,
+            'middlename': self.middlename,
+            'lastname': self.lastname,
+            'address1': self.address1,
+            'address2': self.address2,
+            'city': self.city,
+            'state': self.state,
+            'zipcode': self.zipcode,
+            'country': self.country,
+            'phone': self.phone,
+            'birthmonth': self.birthmonth,
+            'birthday': self.birthday,
+            'birthyear': self.birthyear,
+            'online': self.online,
+            'lastlogin': str(self.lastlogin),
+            'lastlogout': str(self.lastlogout),
+            'created_at': str(self.created_at)
+        }
