@@ -124,6 +124,60 @@ class UsersRegister(Resource):
             }, 400
 
 
+class SimpleUsers(Resource):
+    def get(self, user_id):
+        """Get single simple_user details"""
+        try:
+            simple_user = SimpleUser.query.filter_by(id=int(user_id)).first()
+            if not simple_user:
+                return {
+                    'status': 'fail',
+                    'message': 'User does not exist.'
+                }, 404
+            else:
+                return {
+                    'status': 'success',
+                    'data': {
+                        'id': simple_user.id,
+                        'email': simple_user.email,
+                        'subscribed': simple_user.subscribed,
+                        'registered': simple_user.registered,
+                        'online': simple_user.online,
+                        'lastlogin': simple_user.lastlogin,
+                        'lastlogout': simple_user.lastlogout,
+                        'created_at': simple_user.created_at
+                    }
+                }, 200
+        except ValueError:
+            return response_object, 404
+
+
+class Users(Resource):
+    def get(self, user_id):
+        """Get single user details"""
+        response_object = {
+            'status': 'fail',
+            'message': 'User does not exist'
+        }
+        try:
+            user = User.query.filter_by(id=int(user_id)).first()
+            if not user:
+                return response_object, 404
+            else:
+                response_object = {
+                    'status': 'success',
+                    'data': {
+                        'id': user.id,
+                        'username': user.username,
+                        'email': user.email,
+                        'active': user.active
+                    }
+                }
+                return response_object, 200
+        except ValueError:
+            return response_object, 404
+
+
 api.add_resource(UsersPing, '/users/ping')
 api.add_resource(UsersSubscribe, '/users/subscribe')
 api.add_resource(UsersRegister, '/users/register')
