@@ -1,48 +1,12 @@
 import json
 import unittest
-from project import db
+from project import (
+    db, new_simple_user_dict, new_simple_user_dict2,
+    new_user_dict, new_user_dict2
+)
 from project.api.models import SimpleUser, User
 from project.tests.base import BaseTestCase
 
-
-new_simple_user_dict = {'email': 'user@test.org'}
-new_simple_user_dict2 = {'email': 'user2@test.org'}
-new_user_dict = {
-    'email': 'user@test.org',
-    'subscribed': True,
-    'terms_and_conditions': True,
-    'firstname': 'first',
-    'middlename': 'middle',
-    'lastname': 'last',
-    'address1': '1523 John St',
-    'address2': None,
-    'city': 'Fort Lee',
-    'state': 'NJ',
-    'zipcode': '07024',
-    'country': 'United States',
-    'phone': None,
-    'birthmonth': 'January',
-    'birthday': '01',
-    'birthyear': '1990'
-}
-new_user_dict2 = {
-    'email': 'user2@test.org',
-    'subscribed': True,
-    'terms_and_conditions': True,
-    'firstname': 'first',
-    'middlename': 'middle',
-    'lastname': 'last',
-    'address1': '1523 John St',
-    'address2': None,
-    'city': 'Fort Lee',
-    'state': 'NJ',
-    'zipcode': '07024',
-    'country': 'United States',
-    'phone': None,
-    'birthmonth': 'January',
-    'birthday': '01',
-    'birthyear': '1990'
-}
 
 def add_simple_user(new_simple_user_dict):
     new_simple_user = SimpleUser(email=new_simple_user_dict['email'])
