@@ -94,8 +94,6 @@ class User(db.Model):
             'email': self.email,
             'subscribed': self.subscribed,
             'terms_and_conditions': self.terms_and_conditions,
-            # 'verified': self.verified,
-            # 'hash': self.hash,
             'firstname': self.firstname,
             'middlename': self.middlename,
             'lastname': self.lastname,
