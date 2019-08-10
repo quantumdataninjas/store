@@ -5,7 +5,7 @@ from project import db
 
 class SimpleUser(db.Model):
 
-    __tablename__ = 'emails'
+    __tablename__ = 'simple_users'
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(128), index=True, unique=True, nullable=False)
@@ -23,7 +23,7 @@ class SimpleUser(db.Model):
         self.registered = registered
 
     def __repr__(self):
-        return '<Email {}>'.format(self.email)
+        return '<SimpleUser {}>'.format(self.email)
 
     def to_json(self):
         return {
