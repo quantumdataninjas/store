@@ -48,8 +48,12 @@ class TestUsersService(BaseTestCase):
             new_simple_user = SimpleUser.query.filter_by(
                 email=new_simple_user_dict["email"]
             ).first()
-            self.assertEqual(new_simple_user_dict["email"], new_simple_user.email)
-            self.assertIn(f"{new_simple_user.email} is subscribed!", data["message"])
+            self.assertEqual(
+                new_simple_user_dict["email"], new_simple_user.email
+            )
+            self.assertIn(
+                f"{new_simple_user.email} is subscribed!", data["message"]
+            )
 
     def test_user_can_register(self):
         """Ensure a new user can register"""
@@ -61,9 +65,13 @@ class TestUsersService(BaseTestCase):
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 201)
-            new_user = User.query.filter_by(email=new_user_dict["email"]).first()
+            new_user = User.query.filter_by(
+                email=new_user_dict["email"]
+            ).first()
             self.assertEqual(new_user_dict["email"], new_user.email)
-            new_simple_user = SimpleUser.query.filter_by(email=new_user.email).first()
+            new_simple_user = SimpleUser.query.filter_by(
+                email=new_user.email
+            ).first()
             self.assertEqual(new_simple_user.registered, True)
             self.assertIn(f"{new_user.email} is registered!", data["message"])
 
@@ -92,7 +100,9 @@ class TestUsersService(BaseTestCase):
         """Ensure error is thrown if the JSON object is empty."""
         with self.client:
             response = self.client.post(
-                "/users/subscribe", data=json.dumps({}), content_type="application/json"
+                "/users/subscribe",
+                data=json.dumps({}),
+                content_type="application/json",
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 400)
@@ -102,14 +112,18 @@ class TestUsersService(BaseTestCase):
         """Ensure error is thrown if the JSON object is empty."""
         with self.client:
             response = self.client.post(
-                "/users/register", data=json.dumps({}), content_type="application/json"
+                "/users/register",
+                data=json.dumps({}),
+                content_type="application/json",
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 400)
             self.assertIn("Invalid payload.", data["message"])
 
     def test_subscribe_user_invalid_json_keys(self):
-        """Ensure error is thrown if the JSON object does not have an email key."""
+        """
+        Ensure error is thrown if the JSON object does not have an email key.
+        """
         with self.client:
             response = self.client.post(
                 "/users/subscribe",
@@ -121,7 +135,9 @@ class TestUsersService(BaseTestCase):
             self.assertIn("Integrity Error:", data["message"])
 
     def test_register_user_invalid_json_keys(self):
-        """Ensure error is thrown if the JSON object does not have a email key."""
+        """
+        Ensure error is thrown if the JSON object does not have a email key.
+        """
         with self.client:
             response = self.client.post(
                 "/users/register",
@@ -168,7 +184,8 @@ class TestUsersService(BaseTestCase):
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 400)
             self.assertIn(
-                f'User {new_user_dict["email"]} already exists.', data["message"]
+                f'User {new_user_dict["email"]} already exists.',
+                data["message"],
             )
 
     def test_get_simple_user(self):
@@ -230,8 +247,12 @@ class TestUsersService(BaseTestCase):
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
             self.assertEqual(len(data["data"]["simple_users"]), 2)
-            self.assertIn("user@test.org", data["data"]["simple_users"][0]["email"])
-            self.assertIn("user2@test.org", data["data"]["simple_users"][1]["email"])
+            self.assertIn(
+                "user@test.org", data["data"]["simple_users"][0]["email"]
+            )
+            self.assertIn(
+                "user2@test.org", data["data"]["simple_users"][1]["email"]
+            )
 
     def test_get_all_users(self):
         """Ensure get all users behaves correctly."""
