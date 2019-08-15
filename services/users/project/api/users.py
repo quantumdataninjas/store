@@ -63,59 +63,6 @@ class Register(Resource):
             return {"message": f"Integrity Error: {ie}"}, 400
 
 
-# class GetSimpleUsers(Resource):
-#     def get(self):
-#         """Get all simple users"""
-#         return {
-#             "data": {
-#                 "simple_users": [
-#                     simple_user.to_dict()
-#                     for simple_user in SimpleUser.query.all()
-#                 ]
-#             }
-#         }, 200
-
-
-# class GetSimpleUser(Resource):
-#     def get(self, simple_user_id):
-#         """Get single simple_user details"""
-#         try:
-#             simple_user = SimpleUser.query.filter_by(
-#                 id=int(simple_user_id)
-#             ).first()
-#             if not simple_user:
-#                 return {"message": "User does not exist."}, 404
-#             else:
-#                 return {"data": simple_user.to_dict()}, 200
-#         except ValueError as ve:
-#             return {"message": f"Value Error: {ve}"}, 404
-
-
-# class GetUsers(Resource):
-#     def get(self):
-#         """Get all users"""
-#         return {
-#             "data": {"users": [user.to_dict() for user in User.query.all()]}
-#         }, 200
-
-
-# class GetUser(Resource):
-#     def get(self, user_id):
-#         """Get single user details"""
-#         try:
-#             user = User.query.filter_by(id=int(user_id)).first()
-#             if not user:
-#                 return {"message": "User does not exist."}, 404
-#             else:
-#                 return {"data": user.to_dict()}, 200
-#         except ValueError as ve:
-#             return {"message": f"Value Error: {ve}."}, 404
-
-
 api.add_resource(Ping, "/users/ping")
 api.add_resource(Subscribe, "/users/subscribe")
 api.add_resource(Register, "/users/register")
-# api.add_resource(GetSimpleUsers, "/users/simple")
-# api.add_resource(GetSimpleUser, "/users/simple/<simple_user_id>")
-# api.add_resource(GetUsers, "/users")
-# api.add_resource(GetUser, "/users", "/users/<user_id>")
