@@ -1,43 +1,48 @@
 from datetime import datetime
-from sqlalchemy.sql import func
 from project import db
 
 
 class SimpleUser(db.Model):
-    __tablename__ = 'simple_users'
+    __tablename__ = "simple_users"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(128), index=True, unique=True, nullable=False)
     # ip = db.Column(db.String(15), nullable=False)
     subscribed = db.Column(db.Boolean(), default=True, nullable=False)
     registered = db.Column(db.Boolean(), default=False, nullable=False)
     online = db.Column(db.Boolean(), default=True, nullable=False)
-    lastlogin = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=False)
+    lastlogin = db.Column(
+        db.DateTime, index=True, default=datetime.utcnow, nullable=False
+    )
     lastlogout = db.Column(db.DateTime, index=True, nullable=True)
-    created_at = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=False)
+    created_at = db.Column(
+        db.DateTime, index=True, default=datetime.utcnow, nullable=False
+    )
 
     def __repr__(self):
-        return '<SimpleUser {}>'.format(self.email)
+        return "<SimpleUser {}>".format(self.email)
 
     def to_dict(self):
         return {
-            'id': self.id,
-            'email': self.email,
-            'subscribed': self.subscribed,
-            'registered': self.registered,
-            'online': self.online,
-            'lastlogin': str(self.lastlogin),
-            'lastlogout': str(self.lastlogout),
-            'created_at': str(self.created_at)
+            "id": self.id,
+            "email": self.email,
+            "subscribed": self.subscribed,
+            "registered": self.registered,
+            "online": self.online,
+            "lastlogin": str(self.lastlogin),
+            "lastlogout": str(self.lastlogout),
+            "created_at": str(self.created_at),
         }
 
 
 class User(db.Model):
-    __tablename__ = 'users'
+    __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(128), index=True, unique=True, nullable=False)
     # ip = db.Column(db.String(15), nullable=False)
     subscribed = db.Column(db.Boolean(), default=True, nullable=False)
-    terms_and_conditions = db.Column(db.Boolean(), default=False, nullable=False)
+    terms_and_conditions = db.Column(
+        db.Boolean(), default=False, nullable=False
+    )
     # verified = db.Column(db.Boolean(), default=False, nullable=False)
     # hash = db.Column(db.String(128), nullable=False)
     firstname = db.Column(db.String(128), nullable=False)
@@ -54,34 +59,38 @@ class User(db.Model):
     birthday = db.Column(db.String(2), nullable=False)
     birthyear = db.Column(db.String(4), nullable=False)
     online = db.Column(db.Boolean(), default=True, nullable=False)
-    lastlogin = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=False)
+    lastlogin = db.Column(
+        db.DateTime, index=True, default=datetime.utcnow, nullable=False
+    )
     lastlogout = db.Column(db.DateTime, index=True, nullable=True)
-    created_at = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=True)
+    created_at = db.Column(
+        db.DateTime, index=True, default=datetime.utcnow, nullable=True
+    )
 
     def __repr__(self):
-        return '<User {}>'.format(self.email)
+        return "<User {}>".format(self.email)
 
     def to_dict(self):
         return {
-            'id': self.id,
-            'email': self.email,
-            'subscribed': self.subscribed,
-            'terms_and_conditions': self.terms_and_conditions,
-            'firstname': self.firstname,
-            'middlename': self.middlename,
-            'lastname': self.lastname,
-            'address1': self.address1,
-            'address2': self.address2,
-            'city': self.city,
-            'state': self.state,
-            'zipcode': self.zipcode,
-            'country': self.country,
-            'phone': self.phone,
-            'birthmonth': self.birthmonth,
-            'birthday': self.birthday,
-            'birthyear': self.birthyear,
-            'online': self.online,
-            'lastlogin': str(self.lastlogin),
-            'lastlogout': str(self.lastlogout),
-            'created_at': str(self.created_at)
+            "id": self.id,
+            "email": self.email,
+            "subscribed": self.subscribed,
+            "terms_and_conditions": self.terms_and_conditions,
+            "firstname": self.firstname,
+            "middlename": self.middlename,
+            "lastname": self.lastname,
+            "address1": self.address1,
+            "address2": self.address2,
+            "city": self.city,
+            "state": self.state,
+            "zipcode": self.zipcode,
+            "country": self.country,
+            "phone": self.phone,
+            "birthmonth": self.birthmonth,
+            "birthday": self.birthday,
+            "birthyear": self.birthyear,
+            "online": self.online,
+            "lastlogin": str(self.lastlogin),
+            "lastlogout": str(self.lastlogout),
+            "created_at": str(self.created_at),
         }
