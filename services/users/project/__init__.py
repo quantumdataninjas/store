@@ -2,6 +2,7 @@ import os
 from flask import Flask
 # from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
+from flask_debugtoolbar import DebugToolbarExtension
 
 
 new_simple_user_dict = {'email': 'user@test.org'}
@@ -44,7 +45,7 @@ new_user_dict2 = {
 }
 
 db = SQLAlchemy()
-
+toolbar = DebugToolbarExtension()
 
 def create_app(script_info=None):
     app = Flask(__name__)
@@ -53,6 +54,7 @@ def create_app(script_info=None):
     app.config.from_object(app_settings)
 
     db.init_app(app)
+    toolbar.init_app(app)
 
     from project.api.users import users_blueprint
     app.register_blueprint(users_blueprint)
