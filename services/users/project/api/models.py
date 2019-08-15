@@ -4,9 +4,7 @@ from project import db
 
 
 class SimpleUser(db.Model):
-
     __tablename__ = 'simple_users'
-
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(128), index=True, unique=True, nullable=False)
     # ip = db.Column(db.String(15), nullable=False)
@@ -17,15 +15,10 @@ class SimpleUser(db.Model):
     lastlogout = db.Column(db.DateTime, index=True, nullable=True)
     created_at = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=False)
 
-    def __init__(self, email, subscribed=True, registered=False):
-        self.email = email
-        self.subscribed = subscribed
-        self.registered = registered
-
     def __repr__(self):
         return '<SimpleUser {}>'.format(self.email)
 
-    def to_json(self):
+    def to_dict(self):
         return {
             'id': self.id,
             'email': self.email,
@@ -39,9 +32,7 @@ class SimpleUser(db.Model):
 
 
 class User(db.Model):
-
     __tablename__ = 'users'
-
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(128), index=True, unique=True, nullable=False)
     # ip = db.Column(db.String(15), nullable=False)
@@ -67,28 +58,10 @@ class User(db.Model):
     lastlogout = db.Column(db.DateTime, index=True, nullable=True)
     created_at = db.Column(db.DateTime, index=True, default=datetime.utcnow, nullable=True)
 
-    def __init__(self, email, subscribed, terms_and_conditions, firstname, middlename, lastname, address1, address2, city, state, zipcode, country, phone, birthmonth, birthday, birthyear):
-        self.email = email
-        self.subscribed = subscribed
-        self.terms_and_conditions = terms_and_conditions
-        self.firstname = firstname
-        self.middlename = middlename
-        self.lastname = lastname
-        self.address1 = address1
-        self.address2 = address2
-        self.city = city
-        self.state = state
-        self.zipcode = zipcode
-        self.country = country
-        self.phone = phone
-        self.birthmonth = birthmonth
-        self.birthday = birthday
-        self.birthyear = birthyear
-
     def __repr__(self):
         return '<User {}>'.format(self.email)
 
-    def to_json(self):
+    def to_dict(self):
         return {
             'id': self.id,
             'email': self.email,
