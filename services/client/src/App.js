@@ -1,6 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Subscribe from './Subscribe.js';
+
+
 
 function App() {
   return (
@@ -9,6 +12,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Store Name</h1>
       </header>
+      <Subscribe />
     </div>
   );
 }
