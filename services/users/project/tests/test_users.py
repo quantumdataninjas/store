@@ -3,7 +3,9 @@ import unittest
 from project import (
     db,
     new_simple_user_dict,
+    new_simple_user_dict2,
     new_user_dict,
+    new_user_dict2
 )
 from project.api.models import SimpleUser, User
 from project.tests.base import BaseTestCase
