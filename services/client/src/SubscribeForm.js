@@ -22,7 +22,9 @@ class SubscribeForm extends Component {
       data: {
         email: this.state.value
       },
-      responseType: 'application/json'
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
     .then((res) => { console.log(res); })
     .catch((err) => { console.log(err); });
