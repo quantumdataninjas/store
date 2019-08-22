@@ -3,7 +3,7 @@
 set -e
 
 # Max query attempts before consider setup failed
-MAX_TRIES=5
+MAX_TRIES=10
 
 # Return true-like values if and only if logs
 # contain the expected "ready" line
@@ -22,7 +22,7 @@ function waitUntilServiceIsReady() {
       break
     fi
     echo "Waiting for $2 container... (attempt: $((attempt++)))"
-    sleep 5
+    sleep 10
   done
 
   if [ $attempt -gt $MAX_TRIES ]; then
