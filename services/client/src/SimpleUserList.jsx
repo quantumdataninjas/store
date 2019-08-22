@@ -18,8 +18,10 @@ class SimpleUserList extends Component {
   getSimpleUsers() {
     axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users/simple`)
     .then((res) => {
-      console.log(res);
-      this.setState({simple_users: res.data.data.simple_users})
+      // console.log(res);
+      this.setState({
+        simple_users: res.data.data.simple_users
+      });
     })
     .catch((err) => { console.log(err); });
   }
