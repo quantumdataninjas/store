@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import SimpleUserList from './SimpleUserList';
-import SubscribeForm from './SubscribeForm';
+import logo from 'assets/img/logo.svg';
+import 'assets/scss/App.scss';
+import SimpleUserList from 'components/SimpleUserList';
+import SubscribeForm from 'components/SubscribeForm';
 
 
 
