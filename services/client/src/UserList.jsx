@@ -18,8 +18,10 @@ class UserList extends Component {
   getUsers() {
     axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
     .then((res) => {
-      console.log(res);
-      this.setState({users: res.data.data.users})
+      // console.log(res);
+      this.setState({
+        users: res.data.data.users
+      });
     })
     .catch((err) => { console.log(err); });
   }
