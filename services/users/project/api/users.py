@@ -82,7 +82,7 @@ class Subscribe(Resource):
             return {"message": f"Integrity Error: {ie}"}, 400
 
 
-class Register(Resource):
+class Signup(Resource):
     def post(self):
         post_data = request.get_json()
         if not post_data:
@@ -94,17 +94,17 @@ class Register(Resource):
                 db.session.add(User(**post_data))
                 simple_user = SimpleUser.query.filter_by(email=email).first()
                 if simple_user:
-                    simple_user.registered = True
+                    simple_user.signedup = True
                 else:
                     db.session.add(
                         SimpleUser(
                             email=email,
                             subscribed=post_data.get("subscribed"),
-                            registered=True,
+                            signedup=True,
                         )
                     )
                 db.session.commit()
-                return {"message": f"{email} is registered!"}, 201
+                return {"message": f"{email} has signed up!"}, 201
             else:
                 return {"message": f"User {email} already exists."}, 400
         except exc.IntegrityError as ie:
@@ -118,4 +118,4 @@ api.add_resource(GetSimpleUser, "/users/simple/<simple_user_id>")
 api.add_resource(GetUsers, "/users")
 api.add_resource(GetUser, "/users", "/users/<user_id>")
 api.add_resource(Subscribe, "/users/subscribe")
-api.add_resource(Register, "/users/register")
+api.add_resource(Signup, "/users/signup")

@@ -55,11 +55,11 @@ class TestUsersService(BaseTestCase):
                 f"{new_simple_user.email} is subscribed!", data["message"]
             )
 
-    def test_user_can_register(self):
-        """Ensure a new user can register"""
+    def test_user_can_signup(self):
+        """Ensure a new user can signup"""
         with self.client:
             response = self.client.post(
-                "/users/register",
+                "/users/signup",
                 data=json.dumps(new_user_dict),
                 content_type="application/json",
             )
@@ -72,11 +72,11 @@ class TestUsersService(BaseTestCase):
             new_simple_user = SimpleUser.query.filter_by(
                 email=new_user.email
             ).first()
-            self.assertEqual(new_simple_user.registered, True)
-            self.assertIn(f"{new_user.email} is registered!", data["message"])
+            self.assertEqual(new_simple_user.signedup, True)
+            self.assertIn(f"{new_user.email} has signed up!", data["message"])
 
-    def test_subscribed_user_record_updates_after_registering(self):
-        """Ensure a subscribed user is registered after registering"""
+    def test_subscribed_user_record_updates_after_signup(self):
+        """Ensure a subscribed user is signedup after signing up"""
         with self.client:
             self.client.post(
                 "/users/subscribe",
@@ -86,15 +86,15 @@ class TestUsersService(BaseTestCase):
             new_simple_user = SimpleUser.query.filter_by(
                 email=new_simple_user_dict["email"]
             ).first()
-            self.assertEqual(new_simple_user.registered, False)
+            self.assertEqual(new_simple_user.signedup, False)
             response = self.client.post(
-                "/users/register",
+                "/users/signup",
                 data=json.dumps(new_user_dict),
                 content_type="application/json",
             )
             # data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 201)
-            self.assertEqual(new_simple_user.registered, True)
+            self.assertEqual(new_simple_user.signedup, True)
 
     def test_subscribe_user_invalid_json(self):
         """Ensure error is thrown if the JSON object is empty."""
@@ -108,11 +108,11 @@ class TestUsersService(BaseTestCase):
             self.assertEqual(response.status_code, 400)
             self.assertIn("Invalid payload.", data["message"])
 
-    def test_register_user_invalid_json(self):
+    def test_signup_user_invalid_json(self):
         """Ensure error is thrown if the JSON object is empty."""
         with self.client:
             response = self.client.post(
-                "/users/register",
+                "/users/signup",
                 data=json.dumps({}),
                 content_type="application/json",
             )
@@ -134,13 +134,13 @@ class TestUsersService(BaseTestCase):
             self.assertEqual(response.status_code, 400)
             self.assertIn("Integrity Error:", data["message"])
 
-    def test_register_user_invalid_json_keys(self):
+    def test_signup_user_invalid_json_keys(self):
         """
         Ensure error is thrown if the JSON object does not have a email key.
         """
         with self.client:
             response = self.client.post(
-                "/users/register",
+                "/users/signup",
                 data=json.dumps(new_simple_user_dict),
                 content_type="application/json",
             )
@@ -168,16 +168,16 @@ class TestUsersService(BaseTestCase):
                 data["message"],
             )
 
-    def test_register_user_duplicate_email(self):
+    def test_signup_user_duplicate_email(self):
         """Ensure error is thrown if the email already exists."""
         with self.client:
             self.client.post(
-                "/users/register",
+                "/users/signup",
                 data=json.dumps(new_user_dict),
                 content_type="application/json",
             )
             response = self.client.post(
-                "/users/register",
+                "/users/signup",
                 data=json.dumps(new_user_dict),
                 content_type="application/json",
             )
