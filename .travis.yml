@@ -14,7 +14,7 @@ before_install:
 
 before_script:
   - docker-compose up -d --build
-  - chmod +x ./travis_wait_port.sh
+  - chmod +x ./travis_wait_for_containers.sh
   - ./travis_wait_for_containers.sh
 
 script:
