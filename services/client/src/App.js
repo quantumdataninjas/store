@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SubscribeForm from './SubscribeForm.js';
-import UserList from './UserList.js';
+import SimpleUserList from './SimpleUserList';
+import SubscribeForm from './SubscribeForm';
 
 
 
@@ -14,7 +14,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Store Name</h1>
       </header>
-      <UserList />
+      <SimpleUserList />
     </div>
   );
 }
