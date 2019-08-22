@@ -17,6 +17,7 @@ before_script:
   - chmod +x ./travis_wait_port.sh
   - ./travis_wait_port.sh 5435
   - ./travis_wait_port.sh 5001
+  - ./travis_wait_port.sh 5432
   - ./travis_wait_port.sh 80
 
 script:
