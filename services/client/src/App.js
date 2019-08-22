@@ -1,18 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Subscribe from './Subscribe.js';
+import SubscribeForm from './SubscribeForm.js';
+import UserList from './UserList.js';
 
 
 
 function App() {
   return (
     <div className="App">
+      <SubscribeForm />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Store Name</h1>
       </header>
-      <Subscribe />
+      <UserList />
     </div>
   );
 }
