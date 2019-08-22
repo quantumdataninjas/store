@@ -8,6 +8,6 @@ done
 
 echo "PostgreSQL started"
 
-flask recreate_db
-flask seed_db
-flask run
+python manage.py recreate_db
+python manage.py seed_db
+python manage.py run -h 0.0.0.0
