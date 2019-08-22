@@ -4,17 +4,23 @@ import axios from 'axios';
 class UserList extends Component {
   constructor() {
     super();
-    // this.state = {
-    //   value: ''
-    // };
-    this.getUserList();
+    this.state = {
+      users: []
+    };
     // this.handleChange = this.handleChange.bind(this);
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  getUserList() {
+  componentDidMount() {
+    this.getUsers();
+  }
+
+  getUsers() {
     axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
-    .then((res) => { console.log(res); })
+    .then((res) => {
+      console.log(res);
+      this.setState({users: res.data.data.users})
+    })
     .catch((err) => { console.log(err); });
   }
 
@@ -45,6 +51,18 @@ class UserList extends Component {
               <br/>
               <h1 className="title is-1">All Users</h1>
               <hr/><br/>
+              {/* new */}
+              {
+                this.state.users.map((user) => {
+                  return (
+                    <h4
+                      key={user.id}
+                      className="box title is-4"
+                    >{ user.email }
+                    </h4>
+                  )
+                })
+              }
             </div>
           </div>
         </div>
