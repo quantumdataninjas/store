@@ -186,6 +186,84 @@ class TestUsersService(BaseTestCase):
                 data["message"],
             )
 
+    def test_get_simple_user(self):
+        """Ensure get single user behaves correctly."""
+        new_simple_user = add_simple_user(new_simple_user_dict)
+        with self.client:
+            response = self.client.get(f"/users/simple/{new_simple_user.id}")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(new_simple_user.email, data["data"]["email"])
+
+    def test_get_simple_user_with_string(self):
+        """Ensure error is thrown if an id is not provided."""
+        with self.client:
+            response = self.client.get("/users/simple/blah")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 404)
+            self.assertIn("Value Error:", data["message"])
+
+    def test_get_simple_user_incorrect_id(self):
+        """Ensure error is thrown if the id does not exist."""
+        with self.client:
+            response = self.client.get("/users/simple/999")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 404)
+            self.assertIn("User does not exist.", data["message"])
+
+    def test_get_user(self):
+        """Ensure get single user behaves correctly."""
+        new_user = add_user(new_user_dict)
+        with self.client:
+            response = self.client.get(f"/users/{new_user.id}")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 200)
+            self.assertIn(new_user.email, data["data"]["email"])
+
+    def test_get_user_with_string(self):
+        """Ensure error is thrown if an id is not provided."""
+        with self.client:
+            response = self.client.get("/users/blah")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 404)
+            self.assertIn("Value Error:", data["message"])
+
+    def test_get_user_incorrect_id(self):
+        """Ensure error is thrown if the id does not exist."""
+        with self.client:
+            response = self.client.get("/users/999")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 404)
+            self.assertIn("User does not exist.", data["message"])
+
+    def test_get_all_simple_users(self):
+        """Ensure get all simple users behaves correctly."""
+        add_simple_user(new_simple_user_dict)
+        add_simple_user(new_simple_user_dict2)
+        with self.client:
+            response = self.client.get("/users/simple")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(len(data["data"]["simple_users"]), 2)
+            self.assertIn(
+                "user@test.org", data["data"]["simple_users"][0]["email"]
+            )
+            self.assertIn(
+                "user2@test.org", data["data"]["simple_users"][1]["email"]
+            )
+
+    def test_get_all_users(self):
+        """Ensure get all users behaves correctly."""
+        add_user(new_user_dict)
+        add_user(new_user_dict2)
+        with self.client:
+            response = self.client.get("/users")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(len(data["data"]["users"]), 2)
+            self.assertIn("user@test.org", data["data"]["users"][0]["email"])
+            self.assertIn("user2@test.org", data["data"]["users"][1]["email"])
+
 
 if __name__ == "__main__":
     unittest.main()
