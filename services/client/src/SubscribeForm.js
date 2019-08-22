@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class Subscribe extends Component {
+class SubscribeForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -44,4 +44,4 @@ class Subscribe extends Component {
   }
 }
 
-export default Subscribe;
+export default SubscribeForm;
