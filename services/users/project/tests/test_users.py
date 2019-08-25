@@ -195,7 +195,10 @@ class TestUsersService(BaseTestCase):
             response = self.client.get(f"/users/simple/{new_simple_user.id}")
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(new_simple_user.email, data["simple_user"]["email"])
+            self.assertEqual(
+                new_simple_user.email,
+                data["simple_user"]["email"]
+            )
 
     def test_get_simple_user_with_string(self):
         """Ensure error is thrown if an id is not provided."""
