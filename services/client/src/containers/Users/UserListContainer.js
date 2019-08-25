@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { getUserList } from 'actions'
+import reducer from 'reducers'
+import UserList from 'components/UserList'
 
-class UserList extends Component {
+class UserListContainer extends Component {
   /**
   constructor() {
     super()
@@ -77,4 +81,4 @@ class UserList extends Component {
   }
 }
 
-export default UserList
+export default UserListContainer
