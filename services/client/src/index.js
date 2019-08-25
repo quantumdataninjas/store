@@ -1,16 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import { createBrowserHistory } from 'history';
-import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { createLogger } from 'redux-logger';
-import thunk from 'redux-thunk';
-import promise from 'redux-promise';
-import rootReducer from 'reducers';
-import {
-  getSimpleUserList,
-  getAllProducts
-} from 'actions';
+import configureStore from 'stores';
 import 'assets/scss/index.scss';
 import App from 'containers/App';
 import * as serviceWorker from 'serviceWorker';
@@ -22,16 +14,7 @@ use with react router (check above link)
 const hist = createBrowserHistory();
 **/
 
-const middleware = [ thunk, promise ];
-if(process.env.NODE_ENV !== 'production') {
-  middleware.push(createLogger());
-};
-const store = createStore(
-  rootReducer,
-  applyMiddleware(...middleware)
-);
-// store.dispatch(getSimpleUserList());
-store.dispatch(getAllProducts());
+const store = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
