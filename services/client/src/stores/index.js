@@ -20,6 +20,7 @@ const composedEnhancers = compose(middlewareEnhancer);
 const configureStore = (state={}) => {
   const store = createStore(
     rootReducer,
+    state,
     composedEnhancers,
   );
   if(process.env.NODE_ENV !== 'production' && module.hot) {
