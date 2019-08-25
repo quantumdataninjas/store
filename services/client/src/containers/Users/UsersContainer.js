@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { getUserList } from 'actions';
 // import reducer from 'reducers';
 // import SimpleUserData from 'components/Users/SimpleUserData';
 // import SimpleUserList from 'components/Users/SimpleUserList';
@@ -61,6 +62,11 @@ const mapStateToProps = (state) => ({
   users: state.users
 });
 
+const mapDispatchToProps = dispatch => ({
+  getUserList: dispatch(getUserList)
+});
+
 export default connect(
   mapStateToProps,
+  mapDispatchToProps
 )(UsersContainer);
