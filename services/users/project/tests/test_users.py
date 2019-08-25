@@ -195,7 +195,7 @@ class TestUsersService(BaseTestCase):
             response = self.client.get(f"/users/simple/{new_simple_user.id}")
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(new_simple_user.email, data["data"]["email"])
+            self.assertEqual(new_simple_user.email, data["simple_user"]["email"])
 
     def test_get_simple_user_with_string(self):
         """Ensure error is thrown if an id is not provided."""
@@ -220,7 +220,7 @@ class TestUsersService(BaseTestCase):
             response = self.client.get(f"/users/{new_user.id}")
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertIn(new_user.email, data["data"]["email"])
+            self.assertIn(new_user.email, data["user"]["email"])
 
     def test_get_user_with_string(self):
         """Ensure error is thrown if an id is not provided."""
@@ -246,12 +246,12 @@ class TestUsersService(BaseTestCase):
             response = self.client.get("/users/simple")
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(len(data["data"]["simple_users"]), 2)
+            self.assertEqual(len(data["simple_users"]), 2)
             self.assertIn(
-                "user@test.org", data["data"]["simple_users"][0]["email"]
+                "user@test.org", data["simple_users"][0]["email"]
             )
             self.assertIn(
-                "user2@test.org", data["data"]["simple_users"][1]["email"]
+                "user2@test.org", data["simple_users"][1]["email"]
             )
 
     def test_get_all_users(self):
@@ -262,9 +262,9 @@ class TestUsersService(BaseTestCase):
             response = self.client.get("/users")
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(len(data["data"]["users"]), 2)
-            self.assertIn("user@test.org", data["data"]["users"][0]["email"])
-            self.assertIn("user2@test.org", data["data"]["users"][1]["email"])
+            self.assertEqual(len(data["users"]), 2)
+            self.assertIn("user@test.org", data["users"][0]["email"])
+            self.assertIn("user2@test.org", data["users"][1]["email"])
 
 
 if __name__ == "__main__":

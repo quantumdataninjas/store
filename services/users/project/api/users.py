@@ -18,12 +18,10 @@ class GetSimpleUsers(Resource):
     def get(self):
         """Get all simple users"""
         return {
-            "data": {
-                "simple_users": [
-                    simple_user.to_dict()
-                    for simple_user in SimpleUser.query.all()
-                ]
-            }
+            "simple_users": [
+                simple_user.to_dict()
+                for simple_user in SimpleUser.query.all()
+            ]
         }, 200
 
 
@@ -37,7 +35,7 @@ class GetSimpleUser(Resource):
             if not simple_user:
                 return {"message": "User does not exist."}, 404
             else:
-                return {"data": simple_user.to_dict()}, 200
+                return {"simple_user": simple_user.to_dict()}, 200
         except ValueError as ve:
             return {"message": f"Value Error: {ve}"}, 404
 
@@ -46,7 +44,7 @@ class GetUsers(Resource):
     def get(self):
         """Get all users"""
         return {
-            "data": {"users": [user.to_dict() for user in User.query.all()]}
+            "users": [user.to_dict() for user in User.query.all()]
         }, 200
 
 
@@ -58,7 +56,7 @@ class GetUser(Resource):
             if not user:
                 return {"message": "User does not exist."}, 404
             else:
-                return {"data": user.to_dict()}, 200
+                return {"user": user.to_dict()}, 200
         except ValueError as ve:
             return {"message": f"Value Error: {ve}."}, 404
 
