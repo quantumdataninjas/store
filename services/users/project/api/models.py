@@ -8,12 +8,12 @@ class SimpleUser(db.Model):
     email = db.Column(db.String(128), index=True, unique=True, nullable=False)
     # ip = db.Column(db.String(15), nullable=False)
     subscribed = db.Column(db.Boolean(), default=True, nullable=False)
-    signedup = db.Column(db.Boolean(), default=False, nullable=False)
+    signed_up = db.Column(db.Boolean(), default=False, nullable=False)
     online = db.Column(db.Boolean(), default=True, nullable=False)
-    lastsignin = db.Column(
+    last_signin = db.Column(
         db.DateTime, index=True, default=datetime.utcnow, nullable=False
     )
-    lastsignout = db.Column(db.DateTime, index=True, nullable=True)
+    last_signout = db.Column(db.DateTime, index=True, nullable=True)
     created_at = db.Column(
         db.DateTime, index=True, default=datetime.utcnow, nullable=False
     )
@@ -26,10 +26,10 @@ class SimpleUser(db.Model):
             "id": self.id,
             "email": self.email,
             "subscribed": self.subscribed,
-            "signedup": self.signedup,
+            "signed_up": self.signed_up,
             "online": self.online,
-            "lastsignin": str(self.lastsignin),
-            "lastsignout": str(self.lastsignout),
+            "last_signin": str(self.last_signin),
+            "last_signout": str(self.last_signout),
             "created_at": str(self.created_at),
         }
 
@@ -59,10 +59,10 @@ class User(db.Model):
     birthday = db.Column(db.String(2), nullable=False)
     birthyear = db.Column(db.String(4), nullable=False)
     online = db.Column(db.Boolean(), default=True, nullable=False)
-    lastsignin = db.Column(
+    last_signin = db.Column(
         db.DateTime, index=True, default=datetime.utcnow, nullable=False
     )
-    lastsignout = db.Column(db.DateTime, index=True, nullable=True)
+    last_signout = db.Column(db.DateTime, index=True, nullable=True)
     created_at = db.Column(
         db.DateTime, index=True, default=datetime.utcnow, nullable=True
     )
@@ -90,7 +90,7 @@ class User(db.Model):
             "birthday": self.birthday,
             "birthyear": self.birthyear,
             "online": self.online,
-            "lastsignin": str(self.lastsignin),
-            "lastsignout": str(self.lastsignout),
+            "last_signin": str(self.last_signin),
+            "last_signout": str(self.last_signout),
             "created_at": str(self.created_at),
         }

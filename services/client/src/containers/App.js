@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import logo from 'assets/img/logo.svg'
 import 'assets/scss/App.scss'
-import SimpleUserList from './Users/SimpleUserList'
-import UserList from './Users/UserList'
+import SimpleUserListContainer from './Users/SimpleUserListContainer'
+import UserListContainer from './Users/UserListContainer'
 import SubscribeForm from './Auth/SubscribeForm'
+import ProductsContainer from './ProductsContainer'
+import CartContainer from './CartContainer'
 
 
 
@@ -18,6 +20,10 @@ class App extends Component {
         </header>
         <SimpleUserList />
         <UserList />
+        <hr />
+        <ProductsContainer />
+        <hr />
+        <CartContainer />
       </div>
     )
   }

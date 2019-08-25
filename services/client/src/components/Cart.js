@@ -37,7 +37,7 @@ class Cart extends Component {
       <div>
         <h3>Your Cart</h3>
         <div>{this.productList()}</div>
-        <p>Total: &#36;{total}</p>
+        <p>Total: &#36;{this.props.total}</p>
         <button onClick={this.props.onCheckoutClicked}
           disabled={this.hasProducts() ? '' : 'disabled'}>
           Checkout

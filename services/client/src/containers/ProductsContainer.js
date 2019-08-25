@@ -8,29 +8,28 @@ import ProductsList from 'components/ProductsList'
 
 
 class ProductsContainer extends Component {
-  constructor(props) {
-    super(props)
+  static propTypes = {
+    products: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      inventory: PropTypes.number.isRequired
+    })).isRequired,
+    addToCart: PropTypes.func.isRequired
   }
-}
-const ProductsContainer = ({ products, addToCart }) => (
-  <ProductsList title="Products">
-    {products.map(product =>
-      <ProductItem
-        key={product.id}
-        product={product}
-        onAddToCartClicked={() => addToCart(product.id)} />
-    )}
-  </ProductsList>
-)
-
-ProductsContainer.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
-  })).isRequired,
-  addToCart: PropTypes.func.isRequired
+  
+  render() {
+    return (
+      <ProductsList title="Products">
+        {this.props.products.map(product =>
+          <ProductItem
+            key={product.id}
+            product={product}
+            onAddToCartClicked={() => addToCart(product.id)} />
+        )}
+      </ProductsList>
+    )
+  }
 }
 
 const mapStateToProps = state => ({

@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { addToCart } from 'actions'
 
 class SimpleUserList extends Component {
-  /**
-  constructor() {
-    super()
+  static propTypes = {
+    simple_users: PropTypes.array
+  }
+  
+  constructor(props) {
+    super(props)
 
     // this.state = {
     //   simple_users: []
@@ -13,7 +18,6 @@ class SimpleUserList extends Component {
     // this.handleChange = this.handleChange.bind(this)
     // this.handleSubmit = this.handleSubmit.bind(this)
   }
-  **/
 
   // componentDidMount() {
   //   this.getSimpleUsers()
@@ -48,6 +52,16 @@ class SimpleUserList extends Component {
   //   event.preventDefault()
   // }
 
+  simpleUserList() {
+    return this.props.simple_users.map(user =>
+      <h4
+        key={user.id}
+        className="box title is-4"
+      >{ user.email }
+      </h4>
+    )
+  }
+
   render() {
     return (
       <section className="section">
@@ -58,17 +72,7 @@ class SimpleUserList extends Component {
               <h1 className="title is-1">Simple User List</h1>
               <hr/><br/>
               {/* new */}
-              {
-                this.state.simple_users.map((user) => {
-                  return (
-                    <h4
-                      key={user.id}
-                      className="box title is-4"
-                    >{ user.email }
-                    </h4>
-                  )
-                })
-              }
+              { this.simpleUserList() }
             </div>
           </div>
         </div>

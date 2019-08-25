@@ -20,6 +20,23 @@ export const getSimpleUserList = () => dispatch => {
   .catch((err) => { console.log(err) })
 }
 
+const getUsers = users => ({
+  type: types.GET_USERS,
+  users
+})
+
+export const getUserList = () => dispatch => {
+  axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
+  .then((res) => {
+    // console.log(res);
+    // this.setState({
+    //   simple_users: res.data.data.simple_users
+    // })
+    dispatch(getSimpleUsers(res.data.users))
+  })
+  .catch((err) => { console.log(err) })
+}
+
 const receiveProducts = products => ({
   type: types.RECEIVE_PRODUCTS,
   products
