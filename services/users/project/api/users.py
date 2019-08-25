@@ -92,13 +92,13 @@ class Signup(Resource):
                 db.session.add(User(**post_data))
                 simple_user = SimpleUser.query.filter_by(email=email).first()
                 if simple_user:
-                    simple_user.signedup = True
+                    simple_user.signed_up = True
                 else:
                     db.session.add(
                         SimpleUser(
                             email=email,
                             subscribed=post_data.get("subscribed"),
-                            signedup=True,
+                            signed_up=True,
                         )
                     )
                 db.session.commit()
