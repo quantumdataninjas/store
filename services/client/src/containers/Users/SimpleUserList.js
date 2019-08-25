@@ -1,33 +1,37 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+// import axios from 'axios'
 
 class SimpleUserList extends Component {
+  /**
   constructor() {
-    super();
-    this.state = {
-      simple_users: []
-    };
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
-  }
+    super()
 
-  componentDidMount() {
-    this.getSimpleUsers();
-  }
+    // this.state = {
+    //   simple_users: []
+    // }
 
-  getSimpleUsers() {
-    axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users/simple`)
-    .then((res) => {
-      // console.log(res);
-      this.setState({
-        simple_users: res.data.data.simple_users
-      });
-    })
-    .catch((err) => { console.log(err); });
+    // this.handleChange = this.handleChange.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
   }
+  **/
+
+  // componentDidMount() {
+  //   this.getSimpleUsers()
+  // }
+
+  // getSimpleUsers() {
+  //   axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users/simple`)
+  //   .then((res) => {
+  //     // console.log(res)
+  //     this.setState({
+  //       simple_users: res.data.data.simple_users
+  //     })
+  //   })
+  //   .catch((err) => { console.log(err) })
+  // }
 
   // handleChange(event) {
-  //   this.setState({value: event.target.value});
+  //   this.setState({value: event.target.value})
   // }
   //
   // handleSubmit(event) {
@@ -39,9 +43,9 @@ class SimpleUserList extends Component {
   //     },
   //     responseType: 'application/json'
   //   })
-  //   .then((res) => { console.log(res); })
-  //   .catch((err) => { console.log(err); });
-  //   event.preventDefault();
+  //   .then((res) => { console.log(res) })
+  //   .catch((err) => { console.log(err) })
+  //   event.preventDefault()
   // }
 
   render() {
@@ -51,7 +55,7 @@ class SimpleUserList extends Component {
           <div className="columns">
             <div className="column is-one-third">
               <br/>
-              <h1 className="title is-1">All Users</h1>
+              <h1 className="title is-1">Simple User List</h1>
               <hr/><br/>
               {/* new */}
               {
@@ -73,4 +77,4 @@ class SimpleUserList extends Component {
   }
 }
 
-export default SimpleUserList;
+export default SimpleUserList

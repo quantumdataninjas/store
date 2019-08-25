@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { Component } from 'react'
+import axios from 'axios'
 
 class SubscribeForm extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       value: ''
-    };
+    }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
