@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { getUserList } from 'actions'
-import reducer from 'reducers'
-import UserList from 'components/UserList'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class UserListContainer extends Component {
+
+class UserData extends Component {
+
+  static propTypes = {
+    users: PropTypes.array
+  };
   /**
   constructor() {
     super()
@@ -77,8 +78,8 @@ class UserListContainer extends Component {
           </div>
         </div>
       </section>
-    )
-  }
-}
+    );
+  };
+};
 
-export default UserListContainer
+export default UserData;

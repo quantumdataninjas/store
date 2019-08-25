@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { addToCart } from 'actions'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class SimpleUserList extends Component {
+
   static propTypes = {
     simple_users: PropTypes.array
-  }
-  
+  };
+
+  /**
   constructor(props) {
     super(props)
 
@@ -18,6 +18,7 @@ class SimpleUserList extends Component {
     // this.handleChange = this.handleChange.bind(this)
     // this.handleSubmit = this.handleSubmit.bind(this)
   }
+  **/
 
   // componentDidMount() {
   //   this.getSimpleUsers()
@@ -53,14 +54,16 @@ class SimpleUserList extends Component {
   // }
 
   simpleUserList() {
-    return this.props.simple_users.map(user =>
-      <h4
-        key={user.id}
-        className="box title is-4"
-      >{ user.email }
-      </h4>
-    )
-  }
+    return (
+      this.props.simple_users.map(simple_user =>
+        <h4
+          key={simple_user.id}
+          className="box title is-4"
+        >{ simple_user.email }
+        </h4>
+      )
+    );
+  };
 
   render() {
     return (
@@ -77,8 +80,8 @@ class SimpleUserList extends Component {
           </div>
         </div>
       </section>
-    )
-  }
+    );
+  };
 }
 
-export default SimpleUserList
+export default SimpleUserList;

@@ -1,5 +1,5 @@
-export const GET_USERS = "GET_USERS"
 export const GET_SIMPLE_USERS = "GET_SIMPLE_USERS"
+export const GET_USERS = "GET_USERS"
 export const SIMPLE_USER_CREATED = "SIMPLE_USERS_CREATED"
 export const USER_CREATED = "USER_CREATED"
 

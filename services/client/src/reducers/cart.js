@@ -25,7 +25,8 @@ const quantityById = (state=initialState.quantityById, action) => {
   switch(action.type) {
     case ADD_TO_CART:
       const { productId } = action
-      return { ...state,
+      return {
+        ...state,
         [productId]: (state[productId] || 0) + 1
       }
     default:
@@ -38,7 +39,7 @@ export const getQuantity = (state, productId) =>
 
 export const getAddedIds = state => state.addedIds
 
-const cart = (state=initialState, action) => {
+const cartReducer = (state=initialState, action) => {
   switch(action.type) {
     case CHECKOUT_REQUEST:
       return initialState
@@ -52,4 +53,4 @@ const cart = (state=initialState, action) => {
   }
 }
 
-export default cart
+export default cartReducer;

@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
-// import axios from 'axios'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class UserList extends Component {
+class SimpleUserList extends Component {
+
+  static propTypes = {
+    simple_user_data: PropTypes.object
+  };
+
   /**
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
 
     // this.state = {
-    //   users: []
+    //   simple_users: []
     // }
 
     // this.handleChange = this.handleChange.bind(this)
@@ -16,15 +21,15 @@ class UserList extends Component {
   **/
 
   // componentDidMount() {
-  //   this.getUsers()
+  //   this.getSimpleUsers()
   // }
 
-  // getUsers() {
-  //   axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
+  // getSimpleUsers() {
+  //   axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users/simple`)
   //   .then((res) => {
   //     // console.log(res)
   //     this.setState({
-  //       users: res.data.data.users
+  //       simple_users: res.data.data.simple_users
   //     })
   //   })
   //   .catch((err) => { console.log(err) })
@@ -48,6 +53,16 @@ class UserList extends Component {
   //   event.preventDefault()
   // }
 
+  simpleUserList() {
+    return this.props.simple_users.map(user =>
+      <h4
+        key={user.id}
+        className="box title is-4"
+      >{ user.email }
+      </h4>
+    );
+  }
+
   render() {
     return (
       <section className="section">
@@ -55,26 +70,16 @@ class UserList extends Component {
           <div className="columns">
             <div className="column is-one-third">
               <br/>
-              <h1 className="title is-1">User List</h1>
+              <h1 className="title is-1">Simple User List</h1>
               <hr/><br/>
               {/* new */}
-              {
-                this.state.users.map((user) => {
-                  return (
-                    <h4
-                      key={user.id}
-                      className="box title is-4"
-                    >{ user.email }
-                    </h4>
-                  )
-                })
-              }
+              { this.simpleUserList() }
             </div>
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
 
-export default UserList
+export default SimpleUserList;

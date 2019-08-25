@@ -8,10 +8,6 @@ class Product extends Component {
     title: PropTypes.string
   }
 
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     return (
       <div>

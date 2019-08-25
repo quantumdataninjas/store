@@ -9,10 +9,6 @@ class Cart extends Component {
     onCheckoutClicked: PropTypes.func
   }
 
-  constructor(props) {
-    super(props);
-  }
-
   hasProducts() {
     return this.props.products.length > 0
   }

@@ -1,28 +1,34 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Product from './Product'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Product from './Product';
 
-const ProductItem = ({ product, onAddToCartClicked }) => (
-  <div style={{ marginBottom: 20 }}>
-    <Product
-      title={product.title}
-      price={product.price}
-      quantity={product.inventory} />
-    <button
-      onClick={onAddToCartClicked}
-      disabled={product.inventory > 0 ? '' : 'disabled'}>
-      {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
-    </button>
-  </div>
-)
 
-ProductItem.propTypes = {
-  product: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    inventory: PropTypes.number.isRequired
-  }).isRequired,
-  onAddToCartClicked: PropTypes.func.isRequired
+class ProductItem extends Component {
+
+  static propTypes = {
+    product: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      inventory: PropTypes.number.isRequired
+    }).isRequired,
+    onAddToCartClicked: PropTypes.func.isRequired
+  };
+
+  render() {
+    return (
+      <div style={{ marginBottom: 20 }}>
+        <Product
+          title={this.props.product.title}
+          price={this.props.product.price}
+          quantity={this.props.product.inventory} />
+        <button
+          onClick={this.props.onAddToCartClicked}
+          disabled={this.props.product.inventory > 0 ? '' : 'disabled'}>
+          {this.props.product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
+        </button>
+      </div>
+    );
+  };
 }
 
-export default ProductItem
+export default ProductItem;
