@@ -1,7 +1,31 @@
 import React, { Component } from 'react'
-// import axios from 'axios'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { getSimpleUserList } from 'actions'
+import reducer from 'reducers'
+import SimpleUserList from 'components/SimpleUserList'
 
-class SimpleUserList extends Component {
+class SimpleUserListContainer extends Component {
+  static propTypes = {
+    simple_users: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      email: PropTypes.string.isRequired,
+      subscribed: PropTypes.bool.isRequired,
+      signed_up: PropTypes.bool.isRequired,
+      online: PropTypes.bool.isRequired,
+      last_signin: PropTypes.instanceOf(Date).isRequired,
+      last_signout: PropTypes.instanceOf(Date).isRequired,
+      created_at: PropTypes.instanceOf(Date).isRequired
+    })).isRequired
+  }
+
+  /**
+  -- setup default props if necessary
+
+  static defaultProps = {
+  }
+  **/
+
   /**
   constructor() {
     super()
@@ -50,31 +74,17 @@ class SimpleUserList extends Component {
 
   render() {
     return (
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-one-third">
-              <br/>
-              <h1 className="title is-1">Simple User List</h1>
-              <hr/><br/>
-              {/* new */}
-              {
-                this.state.simple_users.map((user) => {
-                  return (
-                    <h4
-                      key={user.id}
-                      className="box title is-4"
-                    >{ user.email }
-                    </h4>
-                  )
-                })
-              }
-            </div>
-          </div>
-        </div>
-      </section>
+      <SimpleUserList
+        simple_users={this.props.simple_users} />
     )
   }
 }
 
-export default SimpleUserList
+const mapStateToProps = (state) => ({
+  simple_users: getSimpleUserList(state)
+})
+
+export default connect(
+  mapStateToProps,
+  { getSimpleUserList }
+)(SimpleUserListContainer)
