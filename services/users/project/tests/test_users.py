@@ -72,7 +72,7 @@ class TestUsersService(BaseTestCase):
             new_simple_user = SimpleUser.query.filter_by(
                 email=new_user.email
             ).first()
-            self.assertEqual(new_simple_user.signedup, True)
+            self.assertEqual(new_simple_user.signed_up, True)
             self.assertIn(f"{new_user.email} has signed up!", data["message"])
 
     def test_subscribed_user_record_updates_after_signup(self):
@@ -86,7 +86,7 @@ class TestUsersService(BaseTestCase):
             new_simple_user = SimpleUser.query.filter_by(
                 email=new_simple_user_dict["email"]
             ).first()
-            self.assertEqual(new_simple_user.signedup, False)
+            self.assertEqual(new_simple_user.signed_up, False)
             response = self.client.post(
                 "/users/signup",
                 data=json.dumps(new_user_dict),
@@ -94,7 +94,7 @@ class TestUsersService(BaseTestCase):
             )
             # data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 201)
-            self.assertEqual(new_simple_user.signedup, True)
+            self.assertEqual(new_simple_user.signed_up, True)
 
     def test_subscribe_user_invalid_json(self):
         """Ensure error is thrown if the JSON object is empty."""
