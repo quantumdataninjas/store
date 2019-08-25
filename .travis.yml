@@ -19,6 +19,7 @@ before_script:
 
 script:
   - docker-compose exec users flask cov
+  # test
   - docker-compose exec users flake8 project
 
 after_script:
