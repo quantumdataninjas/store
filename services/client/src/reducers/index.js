@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
-import simpleUsersReducer from './simpleUsers';
-import usersReducer from './users';
-import cartReducer, * as fromCart from './cart';
-import productsReducer, * as fromProducts from './products';
+import simple_users from './simpleUsers';
+import users from './users';
+import cart, * as fromCart from './cart';
+import products, * as fromProducts from './products';
 
 
 export default combineReducers({
-  simple_users: simpleUsersReducer,
-  users: usersReducer,
-  cart: cartReducer,
-  products: productsReducer
+  simple_users,
+  users,
+  cart,
+  products
 });
 
 // const getSimpleUserList = state =>
