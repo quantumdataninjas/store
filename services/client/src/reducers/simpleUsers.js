@@ -1,15 +1,15 @@
-import { GET_SIMPLE_USERS, SIMPLE_USER_CREATED } from 'constants/ActionTypes';
+import { GET_SIMPLE_USERS, SIMPLE_USER_CREATED } from 'constants/ActionTypes'
 
 
 const simple_users = (state=[], action) => {
   switch(action.type) {
     case GET_SIMPLE_USERS:
-      return [...state, ...action.simple_users];
+      return [...state, ...action.simple_users]
     case SIMPLE_USER_CREATED:
-      return [...state, ...action.simple_users];
+      return [...state, ...action.simple_users]
     default:
-      return state;
-  };
-};
+      return state
+  }
+}
 
-export default simple_users;
+export default simple_users

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Product from './Product';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Product from './Product'
 
 
 class ProductItem extends Component {
@@ -12,7 +12,7 @@ class ProductItem extends Component {
       inventory: PropTypes.number.isRequired
     }).isRequired,
     onAddToCartClicked: PropTypes.func.isRequired
-  };
+  }
 
   render() {
     return (
@@ -27,8 +27,8 @@ class ProductItem extends Component {
           {this.props.product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
         </button>
       </div>
-    );
-  };
+    )
+  }
 }
 
-export default ProductItem;
+export default ProductItem

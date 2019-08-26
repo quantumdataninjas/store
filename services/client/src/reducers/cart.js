@@ -53,4 +53,4 @@ const cart = (state=initialState, action) => {
   }
 }
 
-export default cart;
+export default cart

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class SimpleUserList extends Component {
 
   static propTypes = {
     simple_user_data: PropTypes.object
-  };
+  }
 
   /**
   constructor(props) {
@@ -60,7 +60,7 @@ class SimpleUserList extends Component {
         className="box title is-4"
       >{ user.email }
       </h4>
-    );
+    )
   }
 
   render() {
@@ -78,8 +78,8 @@ class SimpleUserList extends Component {
           </div>
         </div>
       </section>
-    );
+    )
   }
 }
 
-export default SimpleUserList;
+export default SimpleUserList

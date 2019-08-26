@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getUserList } from 'actions';
-// import reducer from 'reducers';
-// import SimpleUserData from 'components/Users/SimpleUserData';
-// import UserTable from 'components/Users/UserTable';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { getUserList } from 'actions'
+// import reducer from 'reducers'
+// import SimpleUserData from 'components/Users/SimpleUserData'
+// import UserTable from 'components/Users/UserTable'
 
 class UsersContainer extends Component {
 
@@ -31,7 +31,7 @@ class UsersContainer extends Component {
       last_signout: PropTypes.instanceOf(Date).isRequired,
       created_at: PropTypes.instanceOf(Date).isRequired
     })).isRequired
-  };
+  }
 
   userList() {
     return (
@@ -42,8 +42,8 @@ class UsersContainer extends Component {
         >{ user.email }
         </h4>
       )
-    );
-  };
+    )
+  }
 
   render() {
     return (
@@ -60,23 +60,23 @@ class UsersContainer extends Component {
           </div>
         </div>
       </section>
-    );
+    )
     // return (
     //   <SimpleUserList
     //     simple_users={this.props.simple_users.list} />
-    // );
-  };
-};
+    // )
+  }
+}
 
 const mapStateToProps = (state) => ({
   users: state.users
-});
+})
 
 const mapDispatchToProps = dispatch => ({
   getUserList: dispatch(getUserList)
-});
+})
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(UsersContainer);
+)(UsersContainer)
