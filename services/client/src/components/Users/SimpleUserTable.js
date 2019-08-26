@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class SimpleUserList extends Component {
+class SimpleUserTable extends Component {
 
   static propTypes = {
     simple_users: PropTypes.array
@@ -84,4 +84,4 @@ class SimpleUserList extends Component {
   };
 }
 
-export default SimpleUserList;
+export default SimpleUserTable;
