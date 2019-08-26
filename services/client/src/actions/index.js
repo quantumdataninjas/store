@@ -32,13 +32,16 @@ export const getUserList = () => dispatch => {
   axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
   .then((res) => {
     res.data.users.forEach(user => {
+      user.birthday = new Date(user.birthday);
       user.last_signin = new Date(user.last_signin);
       user.last_signout = new Date(user.last_signout);
       user.created_at = new Date(user.created_at);
     });
     dispatch(getUsers(res.data.users))
   })
-  .catch((err) => { console.log(err) });
+  .catch((err) => {
+    console.log(err);
+  });
 };
 
 const receiveProducts = products => ({
