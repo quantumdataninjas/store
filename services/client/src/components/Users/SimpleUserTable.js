@@ -25,6 +25,7 @@ class SimpleUserTable extends Component {
         }
       }
     })
+
     return (
       <Paper>
         <Grid
