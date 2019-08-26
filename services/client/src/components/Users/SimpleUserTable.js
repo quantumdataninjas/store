@@ -42,26 +42,6 @@ class SimpleUserTable extends Component {
           <h1 className="title is-1" style={{color: 'white'}}>Simple User Table</h1>
           <Table styles="border-right: 1px solid white" />
           <TableHeaderRow />
-          <section className="section">
-            <div className="container">
-              <div className="columns">
-              <div className="column is-one-third">
-              <br/>
-              <hr/><br/>
-              {/* new */}
-              {
-                simple_users.map(simple_user =>
-                  <h4
-                  key={simple_user.id}
-                  className="box title is-4"
-                  >{ simple_user.email }
-                  </h4>
-                )
-              }
-              </div>
-              </div>
-            </div>
-          </section>
         </Grid>
       </Paper>
     )
