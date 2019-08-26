@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getUserList } from 'actions';
 // import reducer from 'reducers';
 // import SimpleUserData from 'components/Users/SimpleUserData';
-// import SimpleUserList from 'components/Users/SimpleUserList';
+// import UserTable from 'components/Users/UserTable';
 
 class UsersContainer extends Component {
 
@@ -46,8 +46,6 @@ class UsersContainer extends Component {
   };
 
   render() {
-    console.log("state: " + JSON.stringify(this.state));
-    console.log("props: " + JSON.stringify(this.props));
     return (
       <section className="section">
         <div className="container">

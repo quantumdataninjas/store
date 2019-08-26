@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getSimpleUserList } from 'actions';
 // import reducer from 'reducers';
 // import SimpleUserData from 'components/Users/SimpleUserData';
-// import SimpleUserList from 'components/Users/SimpleUserList';
+import SimpleUserTable from 'components/Users/SimpleUserTable';
 
 class SimpleUsersContainer extends Component {
 
@@ -34,8 +34,6 @@ class SimpleUsersContainer extends Component {
   };
 
   render() {
-    console.log("state: " + JSON.stringify(this.state));
-    console.log("props: " + JSON.stringify(this.props));
     return (
       <section className="section">
         <div className="container">
