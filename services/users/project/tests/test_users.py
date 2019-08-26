@@ -12,7 +12,7 @@ from project.tests.base import BaseTestCase
 
 
 def add_simple_user(new_simple_user_dict):
-    new_simple_user = SimpleUser(email=new_simple_user_dict["email"])
+    new_simple_user = SimpleUser(**new_simple_user_dict)
     db.session.add(new_simple_user)
     db.session.commit()
     return new_simple_user

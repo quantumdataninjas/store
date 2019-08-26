@@ -11,9 +11,11 @@ class SimpleUser(db.Model):
     signed_up = db.Column(db.Boolean(), default=False, nullable=False)
     online = db.Column(db.Boolean(), default=True, nullable=False)
     last_signin = db.Column(
-        db.DateTime, index=True, default=datetime.utcnow, nullable=False
+        db.DateTime, default=datetime.utcnow, nullable=False
     )
-    last_signout = db.Column(db.DateTime, index=True, nullable=True)
+    last_signout = db.Column(
+        db.DateTime, default=datetime.utcnow, nullable=False
+    )
     created_at = db.Column(
         db.DateTime, index=True, default=datetime.utcnow, nullable=False
     )
@@ -38,12 +40,12 @@ class User(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     email = db.Column(db.String(128), index=True, unique=True, nullable=False)
-    # ip = db.Column(db.String(15), nullable=False)
+    # ip = db.Column(db.String(15), index=True, nullable=False)
     subscribed = db.Column(db.Boolean(), default=True, nullable=False)
     terms_and_conditions = db.Column(
         db.Boolean(), default=False, nullable=False
     )
-    # verified = db.Column(db.Boolean(), default=False, nullable=False)
+    verified = db.Column(db.Boolean(), default=False, nullable=False)
     # hash = db.Column(db.String(128), nullable=False)
     firstname = db.Column(db.String(128), nullable=False)
     middlename = db.Column(db.String(128), nullable=True)
@@ -55,14 +57,14 @@ class User(db.Model):
     zipcode = db.Column(db.String(15), nullable=False)
     country = db.Column(db.String(30), nullable=False)
     phone = db.Column(db.String(20), unique=True, nullable=True)
-    birthmonth = db.Column(db.String(10), nullable=False)
-    birthday = db.Column(db.String(2), nullable=False)
-    birthyear = db.Column(db.String(4), nullable=False)
+    birthday = db.Column(db.DateTime, nullable=False)
     online = db.Column(db.Boolean(), default=True, nullable=False)
     last_signin = db.Column(
-        db.DateTime, index=True, default=datetime.utcnow, nullable=False
+        db.DateTime, default=datetime.utcnow, nullable=False
     )
-    last_signout = db.Column(db.DateTime, index=True, nullable=True)
+    last_signout = db.Column(
+        db.DateTime, default=datetime.utcnow, nullable=False
+    )
     created_at = db.Column(
         db.DateTime, index=True, default=datetime.utcnow, nullable=True
     )
@@ -76,6 +78,7 @@ class User(db.Model):
             "email": self.email,
             "subscribed": self.subscribed,
             "terms_and_conditions": self.terms_and_conditions,
+            "verified": self.verified,
             "firstname": self.firstname,
             "middlename": self.middlename,
             "lastname": self.lastname,
@@ -86,9 +89,7 @@ class User(db.Model):
             "zipcode": self.zipcode,
             "country": self.country,
             "phone": self.phone,
-            "birthmonth": self.birthmonth,
-            "birthday": self.birthday,
-            "birthyear": self.birthyear,
+            "birthday": str(self.birthday),
             "online": self.online,
             "last_signin": str(self.last_signin),
             "last_signout": str(self.last_signout),

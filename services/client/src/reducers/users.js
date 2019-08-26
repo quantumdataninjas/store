@@ -1,16 +1,15 @@
-import { GET_USERS, USER_CREATED } from 'constants/ActionTypes';
+import { GET_USERS, USER_CREATED } from 'constants/ActionTypes'
 
 
-const usersReducer = (state=[], action) => {
-  console.log("action: " + JSON.stringify(action));
+const users = (state=[], action) => {
   switch(action.type) {
     case GET_USERS:
-      return [...state, ...action.users];
+      return [...state, ...action.users]
     case USER_CREATED:
-      return [...state, ...action.users];
+      return [...state, ...action.users]
     default:
-      return state;
-  };
-};
+      return state
+  }
+}
 
-export default usersReducer;
+export default users

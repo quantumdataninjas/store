@@ -39,7 +39,7 @@ export const getQuantity = (state, productId) =>
 
 export const getAddedIds = state => state.addedIds
 
-const cartReducer = (state=initialState, action) => {
+const cart = (state=initialState, action) => {
   switch(action.type) {
     case CHECKOUT_REQUEST:
       return initialState
@@ -53,4 +53,4 @@ const cartReducer = (state=initialState, action) => {
   }
 }
 
-export default cartReducer;
+export default cart

@@ -6,25 +6,45 @@ import UsersContainer from './Users/UsersContainer';
 import SubscribeForm from './Auth/SubscribeForm';
 import ProductsContainer from './ProductsContainer';
 import CartContainer from './CartContainer';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 
 class App extends Component {
-  
+
+  constructor(props){
+    super(props);
+    this.state = {
+      palette: {
+        type: "dark"
+      }
+    };
+  };
+
+  toggleDarkTheme() {
+    let newPaletteType = this.state.palette.type === "light" ? "dark" : "light";
+    this.setState({
+      palette: newPaletteType
+    });
+  };
+
   render() {
+    const muiTheme = createMuiTheme(this.state);
     return (
-      <div className="App">
-        <SubscribeForm />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>Store Name</h1>
-        </header>
-        <SimpleUsersContainer />
-        <UsersContainer />
-        <hr />
-        <ProductsContainer />
-        <hr />
-        <CartContainer />
-      </div>
+      <MuiThemeProvider theme={muiTheme}>
+        <div className="App">
+          <SubscribeForm />
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1>Store Name</h1>
+          </header>
+          <SimpleUsersContainer />
+          <UsersContainer />
+          <hr />
+          <ProductsContainer />
+          <hr />
+          <CartContainer />
+        </div>
+      </MuiThemeProvider>
     );
   };
 };

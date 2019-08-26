@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from flask import Flask
 
 # from flask_restful import Resource, Api
@@ -23,9 +24,9 @@ new_user_dict = {
     "zipcode": "07024",
     "country": "United States",
     "phone": None,
-    "birthmonth": "January",
-    "birthday": "01",
-    "birthyear": "1990",
+    # "birthmonth": "January",
+    "birthday": str(datetime(1990, 1, 1)),
+    # "birthyear": "1990",
 }
 new_user_dict2 = {
     "email": "user2@test.org",
@@ -41,9 +42,9 @@ new_user_dict2 = {
     "zipcode": "07024",
     "country": "United States",
     "phone": None,
-    "birthmonth": "January",
-    "birthday": "01",
-    "birthyear": "1990",
+    # "birthmonth": "January",
+    "birthday": str(datetime(1990, 1, 1)),
+    # "birthyear": "1990",
 }
 
 db = SQLAlchemy()
