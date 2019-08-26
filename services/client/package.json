@@ -35,6 +35,7 @@
     "@devexpress/dx-react-grid": "^2.0.3",
     "@devexpress/dx-react-grid-material-ui": "^2.0.3",
     "@material-ui/core": "^4.3.3",
+    "@material-ui/icons": "^4.2.1",
     "history": "^4.9.0",
     "prop-types": "^15.7.2",
     "react-redux": "^7.1.0",
