@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { getUserList } from 'actions'
 // import reducer from 'reducers'
-// import SimpleUserData from 'components/Users/SimpleUserData'
-// import UserTable from 'components/Users/UserTable'
+import UserTable from 'components/Users/UserTable'
 
 class UsersContainer extends Component {
 
@@ -33,38 +32,12 @@ class UsersContainer extends Component {
     })).isRequired
   }
 
-  userList() {
-    return (
-      this.props.users.map(user =>
-        <h4
-          key={user.id}
-          className="box title is-4"
-        >{ user.email }
-        </h4>
-      )
-    )
-  }
-
   render() {
+    const { users } = this.props
     return (
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-one-third">
-              <br/>
-              <h1 className="title is-1">User List</h1>
-              <hr/><br/>
-              {/* new */}
-              { this.userList() }
-            </div>
-          </div>
-        </div>
-      </section>
+      <UserTable
+        users={users} />
     )
-    // return (
-    //   <SimpleUserList
-    //     simple_users={this.props.simple_users.list} />
-    // )
   }
 }
 
