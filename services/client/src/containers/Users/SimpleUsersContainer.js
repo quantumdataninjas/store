@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { getSimpleUserList } from 'actions';
 // import reducer from 'reducers';
 // import SimpleUserData from 'components/Users/SimpleUserData';
-import SimpleUserTable from 'components/Users/SimpleUserTable';
+import SimpleUserGrid from 'components/Users/SimpleUserGrid';
 
 class SimpleUsersContainer extends Component {
 
@@ -21,38 +21,12 @@ class SimpleUsersContainer extends Component {
     })).isRequired
   };
 
-  simpleUserList() {
-    return (
-      this.props.simple_users.map(user =>
-        <h4
-          key={user.id}
-          className="box title is-4"
-        >{ user.email }
-        </h4>
-      )
-    );
-  };
-
   render() {
+    const { simple_users } = this.props;
     return (
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column is-one-third">
-              <br/>
-              <h1 className="title is-1">Simple User List</h1>
-              <hr/><br/>
-              {/* new */}
-              { this.simpleUserList() }
-            </div>
-          </div>
-        </div>
-      </section>
+      <SimpleUserGrid
+        simple_users={simple_users} />
     );
-    // return (
-    //   <SimpleUserList
-    //     simple_users={this.props.simple_users.list} />
-    // );
   };
 };
 
