@@ -1,10 +1,10 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ProductsList from './ProductsList'
+import ProductList from './ProductList'
 
 const setup = props => {
   const component = shallow(
-    <ProductsList title={props.title}>{props.children}</ProductsList>
+    <ProductList title={props.title}>{props.children}</ProductList>
   )
 
   return {
@@ -14,7 +14,7 @@ const setup = props => {
   }
 }
 
-describe('ProductsList component', () => {
+describe('ProductList component', () => {
   it('should render title', () => {
     const { h3 } = setup({ title: 'Test Products' })
     expect(h3.text()).toMatch(/^Test Products$/)
