@@ -73,26 +73,50 @@ const cols = [
     { header: "Created At", name: "created_at" },
 ]
 
-test('UserTable renders properly', () => {
-  const wrapper = mount(<UserTable users={users}/>)
-  const table = wrapper.find('table')
-  expect(table).toHaveLength(1)
-  const thead = table.find('thead')
-  expect(thead).toHaveLength(1)
-  const headers = thead.find('th')
-  expect(headers).toHaveLength(cols.length)
-  headers.forEach((th, i) => {
-      expect(th.text()).toEqual(cols[i].header)
-  })
-  const tbody = table.find('tbody')
-  expect(tbody).toHaveLength(1)
-  const rows = tbody.find('tr')
-  expect(rows).toHaveLength(users.length)
-  rows.forEach((tr, i) => {
-      const cells = tr.find('td')
-      expect(cells).toHaveLength(cols.length)
-      cells.forEach((cell, j) => {
-          expect(cell.text()).toEqual(users[i][cols[j].name])
-      })
-  })
+describe('UserTable Component', () => {
+
+    it('renders empty message as table cell if there is no data', () => {
+        const wrapper = mount(<UserTable users={[]}/>)
+        const table = wrapper.find('table');
+        expect(table).toHaveLength(1);
+        const thead = table.find('thead');
+        expect(thead).toHaveLength(1);
+        const headers = thead.find('th');
+        expect(headers).toHaveLength(cols.length);
+        headers.forEach((th, idx) => {
+            expect(th.text()).toEqual(cols[idx].header);
+        });
+        const tbody = table.find('tbody');
+        expect(tbody).toHaveLength(1);
+        const row = tbody.find('tr');
+        expect(row).toHaveLength(1);
+        const cell = row.find('td');
+        expect(cell).toHaveLength(1);
+        expect(cell.prop('colSpan')).toEqual(cols.length);
+        expect(cell.text()).toEqual('No data');
+    })
+
+    it('renders properly', () => {
+        const wrapper = mount(<UserTable users={users}/>)
+        const table = wrapper.find('table')
+        expect(table).toHaveLength(1)
+        const thead = table.find('thead')
+        expect(thead).toHaveLength(1)
+        const headers = thead.find('th')
+        expect(headers).toHaveLength(cols.length)
+        headers.forEach((th, i) => {
+            expect(th.text()).toEqual(cols[i].header)
+        })
+        const tbody = table.find('tbody')
+        expect(tbody).toHaveLength(1)
+        const rows = tbody.find('tr')
+        expect(rows).toHaveLength(users.length)
+        rows.forEach((tr, i) => {
+            const cells = tr.find('td')
+            expect(cells).toHaveLength(cols.length)
+            cells.forEach((cell, j) => {
+                expect(cell.text()).toEqual(users[i][cols[j].name])
+            })
+        })
+    })
 })
