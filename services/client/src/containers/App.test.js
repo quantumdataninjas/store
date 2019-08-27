@@ -14,7 +14,7 @@ const logger = createLogger()
 const middlewares = [thunk, promise, logger]
 const mockStore = configureStore(middlewares)
 
-describe('App Component', () => {
+describe('App Component tests', () => {
   const initialState = {
     simple_users: [],
     users: [],
