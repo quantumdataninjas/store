@@ -3,12 +3,20 @@ import shop from 'api/shop'
 import * as types from 'constants/ActionTypes'
 
 
-const getSimpleUsers = simple_users => ({
+export const toggleDarkTheme = theme => dispatch => {
+  dispatch({
+    type: types.TOGGLE_DARK_THEME,
+    theme
+  })
+}
+
+
+const receiveSimpleUsers = simple_users => ({
   type: types.GET_SIMPLE_USERS,
   simple_users
 })
 
-export const getSimpleUserList = () => dispatch => {
+export const getSimpleUsers = () => dispatch => {
   axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users/simple`)
   .then((res) => {
     res.data.simple_users.forEach(user => {
@@ -16,19 +24,19 @@ export const getSimpleUserList = () => dispatch => {
       user.last_signout = new Date(user.last_signout)
       user.created_at = new Date(user.created_at)
     })
-    dispatch(getSimpleUsers(res.data.simple_users))
+    dispatch(receiveSimpleUsers(res.data.simple_users))
   })
   .catch((err) => {
     console.log(err)
   })
 }
 
-const getUsers = users => ({
+const receiveUsers = users => ({
   type: types.GET_USERS,
   users
 })
 
-export const getUserList = () => dispatch => {
+export const getUsers = () => dispatch => {
   axios.get(`${process.env.REACT_APP_USERS_SERVICE_URL}/users`)
   .then((res) => {
     res.data.users.forEach(user => {
@@ -37,7 +45,7 @@ export const getUserList = () => dispatch => {
       user.last_signout = new Date(user.last_signout)
       user.created_at = new Date(user.created_at)
     })
-    dispatch(getUsers(res.data.users))
+    dispatch(receiveUsers(res.data.users))
   })
   .catch((err) => {
     console.log(err)
