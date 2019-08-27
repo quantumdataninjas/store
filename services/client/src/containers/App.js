@@ -38,13 +38,9 @@ export class App extends Component {
             <img src={logo} className="App-logo" alt="logo" />
             <h1>Store Name</h1>
           </header>
-          <hr /><br />
           <SimpleUsersContainer />
-          <hr /><br />
           <UsersContainer />
-          <hr />
           <ProductsContainer />
-          <hr />
           <CartContainer />
         </div>
       </MuiThemeProvider>
