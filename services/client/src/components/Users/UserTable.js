@@ -17,13 +17,13 @@ class UserTable extends Component {
   render() {
     let { users } = this.props
     users.forEach(user => {
-      for(let key in user){
+      Object.keys(user).forEach(key => {
         if(typeof(user[key]) === "boolean") {
           user[key] = user[key].toString()
         } else if(user[key] instanceof Date) {
           user[key] = user[key].toLocaleDateString()
         }
-      }
+      })
     })
     return (
       <Paper>
