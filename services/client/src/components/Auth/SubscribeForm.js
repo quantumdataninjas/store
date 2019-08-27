@@ -1,19 +1,57 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import axios from 'axios'
+import clsx from 'clsx'
+import { withStyles } from '@material-ui/styles'
+import { Paper, TextField, Button } from '@material-ui/core'
+
+
+const styles = theme => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  button: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 50,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  },
+})
 
 class SubscribeForm extends Component {
+
+  static propTypes = {
+    classes: PropTypes.object.isRequired,
+  }
+
   constructor() {
     super()
     this.state = {
       value: ''
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
+  // handleChange(event) {
+  //   this.setState({value: event.target.value})
+  // }
 
   handleSubmit(event) {
     axios({
@@ -26,24 +64,41 @@ class SubscribeForm extends Component {
         'Content-Type': 'application/json'
       }
     })
-    .then((res) => { console.log(res); })
-    .catch((err) => { console.log(err); });
-    event.preventDefault();
+    .then((res) => {
+      console.log(res)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+    event.preventDefault()
   }
 
   render() {
+    const { handleSubmit, handleChange } = this
+    const { value } = this.state
+    const { classes } = this.props
     return (
-      <div className="container">
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Email:
-            <input type="text" name="email" value={this.state.value} onChange={this.handleChange} />
-          </label>
-          <input type="submit" value="submit" />
+      <Paper>
+        <form className={classes.container} onSubmit={handleSubmit} autoComplete="on">
+          <TextField
+            required
+            id="email-field"
+            type="email"
+            name="email"
+            label="Email"
+            className={classes.textField}
+            margin="normal"
+          />
+          <Button
+            type="submit"
+            className={classes.button}
+          >
+            Subscribe
+          </Button>
         </form>
-      </div>
+      </Paper>
     )
   }
 }
 
-export default SubscribeForm;
+export default withStyles(styles)(SubscribeForm)
