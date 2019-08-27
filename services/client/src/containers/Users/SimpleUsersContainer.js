@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getSimpleUserList } from 'actions'
+import { getSimpleUsers } from 'actions'
 // import reducer from 'reducers'
 import SimpleUserTable from 'components/Users/SimpleUserTable'
 
@@ -34,7 +34,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  getSimpleUserList: dispatch(getSimpleUserList)
+  getSimpleUsers: dispatch(getSimpleUsers)
 })
 
 export default connect(

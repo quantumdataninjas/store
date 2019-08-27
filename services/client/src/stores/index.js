@@ -4,8 +4,8 @@ import promise from 'redux-promise'
 import { createLogger } from 'redux-logger'
 import rootReducer from 'reducers'
 import {
-  getSimpleUserList,
-  getUserList,
+  getSimpleUsers,
+  getUsers,
   getAllProducts
 } from 'actions'
 
@@ -26,8 +26,8 @@ const configureStore = (state={}) => {
   if(process.env.NODE_ENV !== 'production' && module.hot) {
     module.hot.accept('reducers', () => store.replaceReducer(rootReducer))
   }
-  store.dispatch(getSimpleUserList())
-  store.dispatch(getUserList())
+  store.dispatch(getSimpleUsers())
+  store.dispatch(getUsers())
   store.dispatch(getAllProducts())
   return store
 }
