@@ -1,6 +1,7 @@
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
+import { Grid } from '@devexpress/dx-react-grid-material-ui'
 import SimpleUserTable from '../SimpleUserTable'
 
 
@@ -52,6 +53,8 @@ describe('SimpleUserTable Component', () => {
 
     it('renders empty message as table cell if there is no data', () => {
         const wrapper = mount(<SimpleUserTable simple_users={[]}/>)
+        const grid = wrapper.find(Grid);
+        expect(grid).toHaveLength(1);
         const table = wrapper.find('table');
         expect(table).toHaveLength(1);
         const thead = table.find('thead');
