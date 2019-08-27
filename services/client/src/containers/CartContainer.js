@@ -33,7 +33,11 @@ const mapStateToProps = (state) => ({
   total: getTotal(state)
 })
 
+const mapDispatchToProps = dispatch => ({
+  checkout: dispatch(checkout)
+})
+
 export default connect(
   mapStateToProps,
-  { checkout }
+  mapDispatchToProps
 )(CartContainer)
