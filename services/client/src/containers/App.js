@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import logo from 'assets/img/logo.svg'
 import 'assets/scss/App.scss'
 import SimpleUsersContainer from './Users/SimpleUsersContainer'
@@ -9,7 +10,7 @@ import CartContainer from './CartContainer'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 
-class App extends Component {
+export class App extends Component {
 
   constructor(props){
     super(props)
@@ -51,4 +52,9 @@ class App extends Component {
   }
 }
 
-export default App
+const mapStateToProps = (state) => ({
+})
+
+export default connect(
+  mapStateToProps
+)(App)
