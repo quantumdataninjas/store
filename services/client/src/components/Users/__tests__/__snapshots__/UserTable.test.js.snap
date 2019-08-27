@@ -1,0 +1,779 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserTable Component renders a snapshot 1`] = `
+<div
+  className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+>
+  <h1
+    className="title is-1"
+    style={
+      Object {
+        "color": "white",
+      }
+    }
+  >
+    User Table
+  </h1>
+  <div
+    className="RootBase-root-28"
+  >
+    <div
+      className="TableContainer-root-29"
+    >
+      <div>
+        <table
+          className="MuiTable-root Table-table-30"
+          style={
+            Object {
+              "minWidth": "2400px",
+            }
+          }
+        >
+          <colgroup>
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead
+            className="MuiTableHead-root"
+          >
+            <tr
+              className="MuiTableRow-root MuiTableRow-head"
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      ID
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Email
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Subscribed
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Terms And Conditions
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Verified
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      First Name
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Middle Name
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Last Name
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Address1
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Address2
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      City
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      State
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Zipcode
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Country
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Phone
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Birthday
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Online
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Last Signin
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Last Signout
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-51"
+                >
+                  <div
+                    className="Content-content-64"
+                  >
+                    <span
+                      className="Title-title-67"
+                    >
+                      Created At
+                    </span>
+                  </div>
+                </div>
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="MuiTableBody-root"
+          >
+            <tr
+              className="MuiTableRow-root"
+            >
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                1
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                user@test.org
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                true
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                true
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                false
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                first
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                last
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                1523 John St.
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                Fort Lee
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                NJ
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                07024
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                United States
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                1/1/1990
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                true
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                8/26/2019
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                8/26/2019
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                8/26/2019
+              </td>
+            </tr>
+            <tr
+              className="MuiTableRow-root"
+            >
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                2
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                user2@test.org
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                true
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                true
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                false
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                first
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                last
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                1523 John St.
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                Fort Lee
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                NJ
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                07024
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                United States
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                1/1/1990
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                true
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                8/26/2019
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                8/26/2019
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                colSpan={1}
+              >
+                8/26/2019
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+`;
