@@ -10,10 +10,11 @@ class ProductList extends Component {
   }
 
   render() {
+    const { title, children } = this.props
     return (
       <div>
-        <h3>{this.props.title}</h3>
-        <div>{this.props.children}</div>
+        <h3>{title}</h3>
+        <div>{children}</div>
       </div>
     )
   }

@@ -15,16 +15,17 @@ class ProductItem extends Component {
   }
 
   render() {
+    const { product, onAddToCartClicked } = this.props
     return (
       <div style={{ marginBottom: 20 }}>
         <Product
-          title={this.props.product.title}
-          price={this.props.product.price}
-          quantity={this.props.product.inventory} />
+          title={product.title}
+          price={product.price}
+          quantity={product.inventory} />
         <button
-          onClick={this.props.onAddToCartClicked}
-          disabled={this.props.product.inventory > 0 ? '' : 'disabled'}>
-          {this.props.product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
+          onClick={onAddToCartClicked}
+          disabled={product.inventory > 0 ? '' : 'disabled'}>
+          {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
         </button>
       </div>
     )
