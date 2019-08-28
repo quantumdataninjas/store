@@ -7,6 +7,7 @@ import UsersContainer from './Users/UsersContainer'
 import SubscribeForm from 'components/Auth/SubscribeForm'
 import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
+import { Paper, Typography } from '@material-ui/core'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 
@@ -36,7 +37,10 @@ export class App extends Component {
           <SubscribeForm />
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1>Store Name</h1>
+            {/* <h1>Store Name</h1> */}
+            <Typography component="h1">
+              Store Name
+            </Typography>
           </header>
           <SimpleUsersContainer />
           <UsersContainer />
