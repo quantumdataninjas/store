@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import simple_users from './simpleUsers'
+import simple_users, * as fromSimpleUsers from './simpleUsers'
 import users from './users'
 import cart, * as fromCart from './cart'
 import products, * as fromProducts from './products'
@@ -12,7 +12,6 @@ export default combineReducers({
   products
 })
 
-// const getSimpleUserList = state =>
 
 const getAddedIds = state => fromCart.getAddedIds(state.cart)
 const getQuantity = (state, id) => fromCart.getQuantity(state.cart, id)

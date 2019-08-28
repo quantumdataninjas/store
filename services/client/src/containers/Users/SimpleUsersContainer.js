@@ -26,8 +26,7 @@ class SimpleUsersContainer extends Component {
   render() {
     const { simple_users } = this.props
     return (
-      <SimpleUserTable
-        simple_users={simple_users} />
+      <SimpleUserTable simple_users={simple_users} />
     )
   }
 }

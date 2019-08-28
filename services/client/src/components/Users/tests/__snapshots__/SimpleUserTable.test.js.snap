@@ -2,27 +2,26 @@
 
 exports[`SimpleUserTable Component renders a snapshot 1`] = `
 <div
-  className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation1 SimpleUserTable-container-1 MuiPaper-rounded"
 >
-  <h1
-    className="title is-1"
-    style={
-      Object {
-        "color": "white",
-      }
-    }
-  >
-    Simple User Table
-  </h1>
   <div
-    className="RootBase-root-28"
+    className="MuiPaper-root MuiPaper-elevation1 SimpleUserTable-titlePaper-2 MuiPaper-rounded"
+  >
+    <h2
+      className="MuiTypography-root SimpleUserTable-title-3 MuiTypography-h1"
+    >
+      Simple Users
+    </h2>
+  </div>
+  <div
+    className="RootBase-root-64"
   >
     <div
-      className="TableContainer-root-29"
+      className="TableContainer-root-65"
     >
       <div>
         <table
-          className="MuiTable-root Table-table-30"
+          className="MuiTable-root Table-table-66"
           style={
             Object {
               "minWidth": "960px",
@@ -47,19 +46,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
             >
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       ID
                     </span>
@@ -68,19 +67,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Email
                     </span>
@@ -89,19 +88,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Subscribed
                     </span>
@@ -110,19 +109,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Signed Up
                     </span>
@@ -131,19 +130,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Online
                     </span>
@@ -152,19 +151,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Last Signin
                     </span>
@@ -173,19 +172,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Last Signout
                     </span>
@@ -194,19 +193,19 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Created At
                     </span>
@@ -223,56 +222,56 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
             >
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 1
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 user@test.org
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 false
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
@@ -283,56 +282,56 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
             >
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 2
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 user2@test.org
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 false
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
@@ -343,56 +342,56 @@ exports[`SimpleUserTable Component renders a snapshot 1`] = `
             >
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 3
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 test@test.org
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 false
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
