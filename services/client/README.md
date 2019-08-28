@@ -70,5 +70,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### for Kyle's stupid ass
 ### run the following inside the store/services/client
 ### `npm install`
-### `"NODE_PATH=./src">.env`
+### `echo "NODE_PATH=./src">.env`
 ### `export REACT_APP_USERS_SERVICE_URL=http://localhost`
