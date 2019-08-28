@@ -5,8 +5,7 @@ import {
   Table,
   TableHeaderRow
 } from '@devexpress/dx-react-grid-material-ui'
-import { withStyles } from '@material-ui/styles'
-import { Paper, Typography } from '@material-ui/core'
+import { Paper, Typography, withStyles } from '@material-ui/core'
 
 
 const styles = theme => ({
