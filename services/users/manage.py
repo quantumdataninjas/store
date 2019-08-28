@@ -2,10 +2,10 @@ import sys
 import unittest
 import coverage
 # from flask.cli import FlaskGroup
-from project import (
-    create_app, db,
-    new_simple_user_dict, new_simple_user_dict2,
-    new_user_dict, new_user_dict2
+from project import create_app, db
+from project.utils import(
+    simple_user_dict, simple_user_dict2,
+    user_dict, user_dict2
 )
 from project.api.models import SimpleUser, User
 
@@ -48,10 +48,10 @@ def recreate_db():
 @app.cli.command("seed_db")
 def seed_db():
     """Seeds the database."""
-    db.session.add(SimpleUser(**new_simple_user_dict))
-    db.session.add(SimpleUser(**new_simple_user_dict2))
-    db.session.add(User(**new_user_dict))
-    db.session.add(User(**new_user_dict2))
+    db.session.add(SimpleUser(**simple_user_dict))
+    db.session.add(SimpleUser(**simple_user_dict2))
+    db.session.add(User(**user_dict))
+    db.session.add(User(**user_dict2))
     db.session.commit()
 
 @app.cli.command("test")
