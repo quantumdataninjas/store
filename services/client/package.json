@@ -40,13 +40,6 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-utils": "^1.4.2",
     "history": "^4.9.0",
-<<<<<<< HEAD
-    "node-dev": "^4.0.0",
-    "node-sass": "^4.12.0",
-||||||| merged common ancestors
-=======
-    "node-sass": "^4.12.0",
->>>>>>> 425a5feb8882ee7e80ee76883b6e3bafef7fee28
     "prop-types": "^15.7.2",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
