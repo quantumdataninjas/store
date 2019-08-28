@@ -6,21 +6,27 @@ import {
   TableHeaderRow
 } from '@devexpress/dx-react-grid-material-ui'
 import { withStyles } from '@material-ui/styles'
-import { Paper } from '@material-ui/core'
+import { Paper, Typography } from '@material-ui/core'
 
 
 const styles = theme => ({
   container: {
+    // backgroundColor: "#353535",
     display: 'flex',
     flexWrap: 'wrap',
     padding: theme.spacing(3),
     justifyContent: 'center',
   },
-  title: {
+  titlePaper: {
+    backgroundColor: "#4b4b4b",
     display: 'flex',
     flexWrap: 'wrap',
     padding: theme.spacing(2),
     justifyContent: 'center',
+    // fontSize: 40,
+  },
+  title: {
+    fontSize: 40,
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -76,14 +82,23 @@ class SimpleUserTable extends Component {
             { name: 'last_signout', title: 'Last Signout' },
             { name: 'created_at', title: 'Created At' }
           ]}>
-          <Table style="border-right: 1px solid white" />
+          {/*
+            * TODO:
+            * make borders around each cell
+            * 
+            <Table style="border-right: 1px solid white" />
+          */}
+          <Table />
           <TableHeaderRow />
           <Paper
-            className={classes.title}
+            className={classes.titlePaper}
           >
-            <h1 className="title is-1" style={{color: 'white'}}>
-              Simple User Table
-            </h1>
+            {/* <h1 className="title is-1" style={{color: 'white'}}>
+              Simple Users
+            </h1> */}
+            <Typography variant="h1" component="h2" className={classes.title}>
+              Simple Users
+            </Typography>
           </Paper>
         </Grid>
       </Paper>
