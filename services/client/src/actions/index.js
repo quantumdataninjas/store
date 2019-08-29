@@ -31,6 +31,8 @@ export const getSimpleUsers = () => dispatch => {
   })
 }
 
+// const subscribe = 
+
 const receiveUsers = users => ({
   type: types.GET_USERS,
   users
