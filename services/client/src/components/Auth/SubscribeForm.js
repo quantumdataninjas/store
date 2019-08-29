@@ -59,7 +59,6 @@ export class SubscribeForm extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state)
     axios({
       method: 'post',
       url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/subscribe`,

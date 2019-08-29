@@ -7,34 +7,34 @@ import SimpleUserTable from '../SimpleUserTable'
 
 const simple_users = [
     {
-        "id": "1",
+        "id": 1,
         "email": "user@test.org",
-        "subscribed": "true",
-        "signed_up": "false",
-        "online": "true",
-        "last_signin": "8/26/2019",
-        "last_signout": "8/26/2019",
-        "created_at": "8/26/2019"
+        "subscribed": true,
+        "signed_up": false,
+        "online": true,
+        "last_signin": new Date("8/26/2019"),
+        "last_signout": new Date("8/26/2019"),
+        "created_at": new Date("8/26/2019"),
     },
     {
-        "id": "2",
+        "id": 2,
         "email": "user2@test.org",
-        "subscribed": "true",
-        "signed_up": "false",
-        "online": "true",
-        "last_signin": "8/26/2019",
-        "last_signout": "8/26/2019",
-        "created_at": "8/26/2019"
+        "subscribed": true,
+        "signed_up": false,
+        "online": true,
+        "last_signin": new Date("8/26/2019"),
+        "last_signout": new Date("8/26/2019"),
+        "created_at": new Date("8/26/2019"),
     },
     {
-        "id": "3",
+        "id": 3,
         "email": "test@test.org",
-        "subscribed": "true",
-        "signed_up": "false",
-        "online": "true",
-        "last_signin": "8/26/2019",
-        "last_signout": "8/26/2019",
-        "created_at": "8/26/2019"
+        "subscribed": true,
+        "signed_up": false,
+        "online": true,
+        "last_signin": new Date("8/26/2019"),
+        "last_signout": new Date("8/26/2019"),
+        "created_at": new Date("8/26/2019"),
     },
 ]
 
@@ -94,7 +94,7 @@ describe('SimpleUserTable Component', () => {
             const cells = tr.find('td')
             expect(cells).toHaveLength(cols.length)
             cells.forEach((cell, j) => {
-                expect(cell.text()).toEqual(simple_users[i][cols[j].name])
+                expect(cell.text()).toEqual(simple_users[i][cols[j].name].toString())
             })
         })
     })

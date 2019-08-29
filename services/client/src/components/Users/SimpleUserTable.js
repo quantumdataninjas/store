@@ -66,8 +66,8 @@ class SimpleUserTable extends Component {
     let { classes, simple_users } = this.props
     simple_users.forEach(user => {
       Object.keys(user).forEach(key => {
-        // if(typeof(user[key]) === "boolean") {
-        if(user[key] instanceof Boolean) {
+        if(typeof(user[key]) === "boolean") {
+        // if(user[key] instanceof Boolean) {
           user[key] = user[key].toString()
         } else if(user[key] instanceof Date) {
           user[key] = user[key].toLocaleDateString()
