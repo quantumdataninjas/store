@@ -50,14 +50,24 @@ class SimpleUserTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    simple_users: PropTypes.array.isRequired,
+    simple_users: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      email: PropTypes.string.isRequired,
+      subscribed: PropTypes.bool.isRequired,
+      signed_up: PropTypes.bool.isRequired,
+      online: PropTypes.bool.isRequired,
+      last_signin: PropTypes.instanceOf(Date).isRequired,
+      last_signout: PropTypes.instanceOf(Date).isRequired,
+      created_at: PropTypes.instanceOf(Date).isRequired
+    })).isRequired,
   }
 
   render() {
     let { classes, simple_users } = this.props
     simple_users.forEach(user => {
       Object.keys(user).forEach(key => {
-        if(typeof(user[key]) === "boolean") {
+        // if(typeof(user[key]) === "boolean") {
+        if(user[key] instanceof Boolean) {
           user[key] = user[key].toString()
         } else if(user[key] instanceof Date) {
           user[key] = user[key].toLocaleDateString()
