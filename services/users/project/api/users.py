@@ -86,14 +86,14 @@ class Subscribe(Resource):
             if not validate_email(email):
                 return {
                     "message": f"{email} is not a valid email."
-                }, 400
+                }, 4001
             simple_user = SimpleUser.query.filter_by(email=email).first()
             if simple_user:
                 # message, status_code = f"User {email} is already subscribed.", 400
                 # return
                 return {
                     "message": f"User {email} is already subscribed."
-                }, 400
+                }, 4002
             db.session.add(SimpleUser(email=email, subscribed=True))
             db.session.commit()
             # message, status_code = f"{email} is subscribed!", 201
@@ -114,7 +114,7 @@ class Subscribe(Resource):
             # message, status_code = f"Integrity Error: {ie}", 400
             return {
                 "message": f"Integrity Error: {ie}"
-            }, 400
+            }, 4003
         # finally:
         #     return {"message": message}, status_code
 

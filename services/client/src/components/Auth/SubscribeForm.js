@@ -45,15 +45,17 @@ class SubscribeForm extends Component {
     this.state = {
       value: ''
     }
-    // this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  // handleChange(event) {
-  //   this.setState({value: event.target.value})
-  // }
+  handleChange(event) {
+    console.log(this.state.value)
+    this.setState({value: event.target.value})
+  }
 
   handleSubmit(event) {
+    console.log(this.state.value)
     axios({
       method: 'post',
       url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/subscribe`,
