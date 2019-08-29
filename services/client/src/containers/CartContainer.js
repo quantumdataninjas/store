@@ -19,11 +19,12 @@ class CartContainer extends Component {
   }
 
   render() {
+    const { products, total } = this.props
     return (
       <Cart
-        products={this.props.products}
-        total={this.props.total}
-        onCheckoutClicked={() => checkout(this.props.products)} />
+        products={products}
+        total={total}
+        onCheckoutClicked={() => checkout(products)} />
     )
   }
 }
