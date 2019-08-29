@@ -2,18 +2,20 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 import clsx from 'clsx'
-import { withStyles } from '@material-ui/styles'
-import { Paper, TextField, Button } from '@material-ui/core'
+import { Paper, TextField, Button, withStyles } from '@material-ui/core'
 
 
 const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    padding: 20,
+    // padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+  },
+  form: {
+    margin: theme.spacing(2),
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -30,11 +32,12 @@ const styles = theme => ({
     color: 'white',
     height: 50,
     padding: '0 30px',
+    marginTop: 20,
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
 })
 
-class SubscribeForm extends Component {
+export class SubscribeForm extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
@@ -43,22 +46,24 @@ class SubscribeForm extends Component {
   constructor() {
     super()
     this.state = {
-      value: ''
+      email: ''
     }
-    // this.handleChange = this.handleChange.bind(this)
+    this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  // handleChange(event) {
-  //   this.setState({value: event.target.value})
-  // }
+  handleChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
 
   handleSubmit(event) {
     axios({
       method: 'post',
       url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/subscribe`,
       data: {
-        email: this.state.value
+        email: this.state.email
       },
       headers: {
         'Content-Type': 'application/json'
@@ -75,11 +80,11 @@ class SubscribeForm extends Component {
 
   render() {
     const { handleSubmit, handleChange } = this
-    const { value } = this.state
+    const { email } = this.state
     const { classes } = this.props
     return (
-      <Paper>
-        <form className={classes.container} onSubmit={handleSubmit} autoComplete="on">
+      <Paper className={classes.container}>
+        <form className={classes.form} onSubmit={handleSubmit} autoComplete="on">
           <TextField
             required
             id="email-field"
@@ -87,6 +92,7 @@ class SubscribeForm extends Component {
             name="email"
             label="Email"
             className={classes.textField}
+            onChange={handleChange}
             margin="normal"
           />
           <Button
