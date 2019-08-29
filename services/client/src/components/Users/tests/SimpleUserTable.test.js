@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
@@ -75,8 +76,9 @@ describe('SimpleUserTable Component', () => {
     })
 
     it('renders', () => {
-        //   const wrapper = shallow(<SimpleUserTable simple_users={simple_users}/>)
-        const wrapper = mount(<SimpleUserTable simple_users={simple_users}/>)
+        const wrapper = mount(
+            <SimpleUserTable simple_users={_.cloneDeep(simple_users)} />
+        )
         const table = wrapper.find('table')
         expect(table).toHaveLength(1)
         const thead = table.find('thead')
@@ -94,13 +96,20 @@ describe('SimpleUserTable Component', () => {
             const cells = tr.find('td')
             expect(cells).toHaveLength(cols.length)
             cells.forEach((cell, j) => {
-                expect(cell.text()).toEqual(simple_users[i][cols[j].name].toString())
+                const value = simple_users[i][cols[j].name]
+                if(value instanceof Date) {
+                    expect(cell.text()).toEqual(value.toLocaleDateString())
+                } else {
+                    expect(cell.text()).toEqual(value.toString())
+                }
             })
         })
     })
 
     it('renders a snapshot', () => {
-        const tree = renderer.create(<SimpleUserTable simple_users={simple_users} />)
+        const tree = renderer.create(
+            <SimpleUserTable simple_users={_.cloneDeep(simple_users)} />
+        )
         expect(tree).toMatchSnapshot()
     })
 })
