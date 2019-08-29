@@ -79,7 +79,6 @@ export class SubscribeForm extends Component {
 
   render() {
     const { handleSubmit, handleChange } = this
-    const { email } = this.state
     const { classes } = this.props
     return (
       <Paper className={classes.container}>
