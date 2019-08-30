@@ -50,19 +50,21 @@ class SimpleUserTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
-    simple_users: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      email: PropTypes.string.isRequired,
-      subscribed: PropTypes.bool.isRequired,
-      signed_up: PropTypes.bool.isRequired,
-      online: PropTypes.bool.isRequired,
-      last_signin: PropTypes.instanceOf(Date).isRequired,
-      last_signout: PropTypes.instanceOf(Date).isRequired,
-      created_at: PropTypes.instanceOf(Date).isRequired
-    })).isRequired,
+    simple_users: PropTypes.array.isRequired,
+    // simple_users: PropTypes.arrayOf(PropTypes.shape({
+    //   id: PropTypes.number.isRequired,
+    //   email: PropTypes.string.isRequired,
+    //   subscribed: PropTypes.bool.isRequired,
+    //   signed_up: PropTypes.bool.isRequired,
+    //   online: PropTypes.bool.isRequired,
+    //   last_signin: PropTypes.instanceOf(Date).isRequired,
+    //   last_signout: PropTypes.instanceOf(Date).isRequired,
+    //   created_at: PropTypes.instanceOf(Date).isRequired
+    // })).isRequired,
   }
 
   render() {
+    console.log('Simple User Table render')
     let { classes, simple_users } = this.props
     simple_users.forEach(user => {
       Object.keys(user).forEach(key => {
