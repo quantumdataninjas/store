@@ -52,22 +52,12 @@ export class SubscribeForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-<<<<<<< HEAD
   handleChange(event) {
-    console.log(this.state.value)
-    this.setState({value: event.target.value})
+    this.setState({email: event.target.value})
+    //this.setState({
+    //  [event.target.name]: event.target.value
+    //})
   }
-||||||| merged common ancestors
-  // handleChange(event) {
-  //   this.setState({value: event.target.value})
-  // }
-=======
-  handleChange(event) {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
-  }
->>>>>>> 5a7ebddb593c7ef3319ec3c71e44764607a4b1db
 
   handleSubmit(event) {
     console.log(this.state.value)
