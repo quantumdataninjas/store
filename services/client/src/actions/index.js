@@ -31,6 +31,14 @@ export const getSimpleUsers = () => dispatch => {
   })
 }
 
+export const createSimpleUser = simple_user => {
+  return {
+    type: types.SIMPLE_USER_CREATED,
+    simple_user
+  }
+  // dispatch(getSimpleUsers())
+}
+
 // const subscribe = 
 
 const receiveUsers = users => ({
