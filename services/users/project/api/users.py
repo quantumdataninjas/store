@@ -89,14 +89,11 @@ class Subscribe(Resource):
                 }, 4001
             simple_user = SimpleUser.query.filter_by(email=email).first()
             if simple_user:
-                # message, status_code = f"User {email} is already subscribed.", 400
-                # return
                 return {
                     "message": f"User {email} is already subscribed."
                 }, 4002
             db.session.add(SimpleUser(email=email, subscribed=True))
             db.session.commit()
-            # message, status_code = f"{email} is subscribed!", 201
             return {
                 "message": f"{email} is subscribed!"
             }, 201
@@ -105,13 +102,11 @@ class Subscribe(Resource):
                 "message": f"Type Error: Post data must be JSON."
             }, 400
         except KeyError as ke:
-            # message, status_code = f"Key Error: {ke}", 400
             return {
                 "message": f"Key Error: {ke}"
             }, 400
         except exc.IntegrityError as ie:
             db.session.rollback()
-            # message, status_code = f"Integrity Error: {ie}", 400
             return {
                 "message": f"Integrity Error: {ie}"
             }, 4003

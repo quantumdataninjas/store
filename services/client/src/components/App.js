@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from 'assets/img/logo.svg'
 import 'assets/scss/App.scss'
-import SimpleUsersContainer from './Users/SimpleUsersContainer'
-import UsersContainer from './Users/UsersContainer'
+import SimpleUsers from '../containers/Users/SimpleUsers'
+import UsersContainer from '../containers/Users/UsersContainer'
 import SubscribeForm from 'components/Auth/SubscribeForm'
-import ProductsContainer from './ProductsContainer'
-import CartContainer from './CartContainer'
+import ProductsContainer from '../containers/ProductsContainer'
+import CartContainer from '../containers/CartContainer'
 import { Paper, Typography } from '@material-ui/core'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 
-export class App extends Component {
+class App extends Component {
 
   constructor(props){
     super(props)
@@ -42,7 +42,7 @@ export class App extends Component {
               Store Name
             </Typography>
           </header>
-          <SimpleUsersContainer />
+          <SimpleUsers />
           <UsersContainer />
           <ProductsContainer />
           <CartContainer />
@@ -52,9 +52,11 @@ export class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-})
+export default App
 
-export default connect(
-  mapStateToProps
-)(App)
+// const mapStateToProps = (state) => ({
+// })
+
+// export default connect(
+//   mapStateToProps
+// )(App)

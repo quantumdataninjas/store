@@ -72,7 +72,10 @@ class TestUsersService(BaseTestCase):
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 400)
-            self.assertIn("Type Error: Post data must be JSON.", data["message"])
+            self.assertIn(
+                "Type Error: Post data must be JSON.",
+                data["message"]
+            )
 
     def test_subscribe_with_empty_json(self):
         """
@@ -246,7 +249,10 @@ class TestUsersService(BaseTestCase):
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 400)
-            self.assertIn("Type Error: Post data must be JSON.", data["message"])
+            self.assertIn(
+                "Type Error: Post data must be JSON.",
+                data["message"]
+            )
 
     def test_signup_with_empty_json(self):
         """

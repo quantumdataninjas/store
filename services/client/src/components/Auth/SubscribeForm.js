@@ -64,9 +64,7 @@ export class SubscribeForm extends Component {
     axios({
       method: 'post',
       url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/subscribe`,
-      data: {
-        email: this.state.email
-      },
+      data: this.state,
       headers: {
         'Content-Type': 'application/json'
       }
@@ -82,7 +80,6 @@ export class SubscribeForm extends Component {
 
   render() {
     const { handleSubmit, handleChange } = this
-    const { email } = this.state
     const { classes } = this.props
     return (
       <Paper className={classes.container}>
