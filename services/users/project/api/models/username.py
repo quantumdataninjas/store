@@ -1,4 +1,4 @@
-from project import db
+# from project import db
 
 
 # TODO: setup association table
