@@ -204,6 +204,8 @@ class Signup(Resource):
             post_data["simple_user_id"] = simple_user.id
 
             new_address = Address(**post_data["address"])
+            db.session.add(new_address)
+            db.session.commit()
             post_data["main_address_id"] = new_address.id
             del post_data["address"]
 
