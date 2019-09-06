@@ -1,7 +1,7 @@
 from datetime import datetime
 # from sqlalchemy.ext.associationproxy import association_proxy
 from project import db
-from .user_address import UserAddress, UserAddressHistory
+# from .user_address import UserAddress, UserAddressHistory
 
 
 class User(db.Model):
@@ -47,14 +47,18 @@ class User(db.Model):
     )
     # TODO: check null address
     # addresses = db.relationship(
-        # "Address", primaryjoin="and_(User.main_address_id==Address.id)",
-        # "Address", primaryjoin="and_(User.main_address_id==Address.id)", back_populates="user",
+    #     "Address", primaryjoin="and_(User.main_address_id==Address.id)",
+    #     "Address",
+    #     primaryjoin="and_(User.main_address_id==Address.id)",
+    #     back_populates="user",
     # )
     addresses = db.relationship(
         "Address", secondary="user_address", backref="user", lazy=True
     )
     # addresses = association_proxy(
-    #     "user_addresses", "address", creator=lambda address: UserAddress(address=address)
+    #     "user_addresses",
+    #     "address",
+    #     creator=lambda address: UserAddress(address=address)
     # )
     address_history = db.Column(
         db.ARRAY(db.BigInteger), default=[], nullable=False
