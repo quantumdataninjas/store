@@ -7,9 +7,9 @@ from flask_debugtoolbar import DebugToolbarExtension
 from flask_cors import CORS
 
 
-db = SQLAlchemy()
-toolbar = DebugToolbarExtension()
-cors = CORS()
+# db = SQLAlchemy()
+# toolbar = DebugToolbarExtension()
+# cors = CORS()
 
 
 def create_app(script_info=None):
@@ -17,10 +17,11 @@ def create_app(script_info=None):
 
     app_settings = os.getenv("APP_SETTINGS")
     app.config.from_object(app_settings)
-
-    db.init_app(app)
-    toolbar.init_app(app)
-    cors.init_app(app)
+    db = SQLAlchemy(app)
+    toolbar = DebugToolbarExtension(app)
+    # toolbar.init_app(app)
+    cors = CORS(app)
+    # cors.init_app(app)
 
     from project.api.users import users_blueprint
     app.register_blueprint(users_blueprint)
