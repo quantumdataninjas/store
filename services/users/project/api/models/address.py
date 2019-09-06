@@ -6,9 +6,9 @@ class Address(db.Model):
     id = db.Column(
         db.BigInteger, primary_key=True, autoincrement=True
     )
-    users = db.relationship(
-        "User", secondary="user_addresses", backref="addresses", lazy=True
-    )
+    # users = db.relationship(
+    #     "User", secondary="user_addresses", backref="addresses", lazy=True
+    # )
     # users_history = db.relationship(
     #     "User", secondary="user_address_history", backref="address", lazy=True
     # )
