@@ -82,6 +82,8 @@ class UserTable extends Component {
           user[key] = user[key].toString()
         } else if(user[key] instanceof Date) {
           user[key] = user[key].toLocaleDateString()
+        } else if(typeof(user[key]) === "undefined") {
+          user[key] = "undefined"
         }
       })
     })
