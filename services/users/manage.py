@@ -1,16 +1,20 @@
 import sys
 import unittest
-import coverage
+from coverage import Coverage
 # from flask.cli import FlaskGroup
 from project import create_app, db
 from project.utils import(
     simple_user_dict, simple_user_dict2,
-    user_dict, user_dict2
+    user_dict, user_dict2,
+    add_simple_user, add_user,
 )
-from project.api.models import SimpleUser, User
+# from project.api.models import (
+#     SimpleUser,
+#     User
+# )
 
 
-COV = coverage.coverage(
+COV = Coverage(
     branch=True,
     include='project/*',
     omit=[
@@ -48,11 +52,30 @@ def recreate_db():
 @app.cli.command("seed_db")
 def seed_db():
     """Seeds the database."""
-    db.session.add(SimpleUser(**simple_user_dict))
-    db.session.add(SimpleUser(**simple_user_dict2))
-    db.session.add(User(**user_dict))
-    db.session.add(User(**user_dict2))
-    db.session.commit()
+    add_simple_user(simple_user_dict)
+    add_simple_user(simple_user_dict2)
+    add_user(user_dict)
+    add_user(user_dict2)
+
+    # simple_user = SimpleUser(**simple_user_dict)
+    # simple_user2 = SimpleUser(**simple_user_dict2)
+    # db.session.add(simple_user)
+    # db.session.add(simple_user2)
+
+
+    # db.session.add(User(**user_dict, simple_user_id=simple_user.id))
+    # db.session.add(User(**user_dict2, simple_user_id=simple_user2.id))
+
+    # addresses = new_user["addresses"]
+    # del new_user["addresses"]
+    # user = User(**new_user, simple_user_id=simple_user.id)
+    # db.session.add(user)
+    # for i, address in enumerate(addresses):
+    #     addresses[i] = Address(**address, user_id=user.id)
+    #     db.session.add(addresses[i])
+    # user.addresses = addresses
+    # db.session.commit()
+
 
 @app.cli.command("test")
 def test():
