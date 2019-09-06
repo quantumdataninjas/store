@@ -9,7 +9,7 @@ class User(db.Model):
     id = db.Column(
         db.BigInteger, primary_key=True, autoincrement=True
     )
-    simple_users_id = db.Column(
+    simple_user_id = db.Column(
         db.BigInteger, db.ForeignKey("simple_users.id"), nullable=False
     )
     username = db.Column(
@@ -100,7 +100,7 @@ class User(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "simple_users_id": self.simple_users_id,
+            "simple_user_id": self.simple_user_id,
             "username": self.username,
             "email": self.email,
             "subscribed": self.subscribed,
