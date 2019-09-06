@@ -1,10 +1,9 @@
-FROM python:3.7.4-alpine
+FROM python:3.7.4-slim
 
-RUN apk update && \
-    apk add --virtual build-deps gcc python3-dev libffi-dev musl-dev && \
-    apk add postgresql-dev && \
-    apk add netcat-openbsd && \
-    apk upgrade
+RUN apt-get update && \
+    apt-get -y install netcat && \
+    apt-get clean \
+    apt-get upgrade
 
 WORKDIR /usr/src/app
 
