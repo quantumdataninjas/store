@@ -5,17 +5,77 @@ import {
   Table,
   TableHeaderRow
 } from '@devexpress/dx-react-grid-material-ui'
-import { Paper } from '@material-ui/core'
+import { Paper, Typography, withStyles } from '@material-ui/core'
 
+
+const styles = theme => ({
+  container: {
+    // backgroundColor: "#353535",
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: theme.spacing(3),
+    justifyContent: 'center',
+  },
+  titlePaper: {
+    backgroundColor: "#4b4b4b",
+    display: 'flex',
+    flexWrap: 'wrap',
+    padding: theme.spacing(2),
+    justifyContent: 'center',
+    // fontSize: 40,
+  },
+  title: {
+    fontSize: 40,
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  button: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 50,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  },
+})
 
 class UserTable extends Component {
 
   static propTypes = {
-    users: PropTypes.array.isRequired
+    // users: PropTypes.array.isRequired,
+    users: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      email: PropTypes.string.isRequired,
+      subscribed: PropTypes.bool.isRequired,
+      terms_and_conditions: PropTypes.bool.isRequired,
+      verified: PropTypes.bool.isRequired,
+      firstname: PropTypes.string.isRequired,
+      middlename: PropTypes.string,
+      lastname: PropTypes.string.isRequired,
+      // address1: PropTypes.string.isRequired,
+      // address2: PropTypes.string,
+      // city: PropTypes.string.isRequired,
+      // state: PropTypes.string.isRequired,
+      // zipcode: PropTypes.string.isRequired,
+      // country: PropTypes.string.isRequired,
+      phone: PropTypes.string,
+      birthday: PropTypes.instanceOf(Date).isRequired,
+      online: PropTypes.bool.isRequired,
+      last_signin: PropTypes.instanceOf(Date).isRequired,
+      last_signout: PropTypes.instanceOf(Date).isRequired,
+      created_at: PropTypes.instanceOf(Date).isRequired
+    })).isRequired
   }
 
   render() {
-    let { users } = this.props
+    let { classes, users } = this.props
     users.forEach(user => {
       Object.keys(user).forEach(key => {
         if(typeof(user[key]) === "boolean") {
@@ -26,7 +86,7 @@ class UserTable extends Component {
       })
     })
     return (
-      <Paper>
+      <Paper className={classes.container}>
         <Grid
           rows={users}
           columns={[
@@ -55,7 +115,16 @@ class UserTable extends Component {
             { name: 'deleted', title: 'Deleted' },
             { name: 'deleted_at', title: 'Deleted At' },
           ]}>
-          <h1 className="title is-1" style={{color: 'white'}}>User Table</h1>
+          <Paper
+            className={classes.titlePaper}
+          >
+            {/* <h1 className="title is-1" style={{color: 'white'}}>
+              Users
+            </h1> */}
+            <Typography variant="h1" component="h2" className={classes.title}>
+              Users
+            </Typography>
+          </Paper>
           <Table styles="border-right: 1px solid white" />
           <TableHeaderRow />
         </Grid>
@@ -64,4 +133,4 @@ class UserTable extends Component {
   }
 }
 
-export default UserTable
+export default withStyles(styles)(UserTable)
