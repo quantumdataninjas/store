@@ -31,6 +31,8 @@ class UserTable extends Component {
           rows={users}
           columns={[
             { name: 'id', title: 'ID' },
+            { name: 'simple_user_id', title: 'Simple User ID' },
+            { name: 'username', title: 'Username' },
             { name: 'email', title: 'Email' },
             { name: 'subscribed', title: 'Subscribed' },
             { name: 'terms_and_conditions', title: 'Terms And Conditions' },
@@ -38,18 +40,20 @@ class UserTable extends Component {
             { name: 'firstname', title: 'First Name' },
             { name: 'middlename', title: 'Middle Name' },
             { name: 'lastname', title: 'Last Name' },
-            { name: 'address1', title: 'Address1' },
-            { name: 'address2', title: 'Address2' },
-            { name: 'city', title: 'City' },
-            { name: 'state', title: 'State' },
-            { name: 'zipcode', title: 'Zipcode' },
-            { name: 'country', title: 'Country' },
+            // { name: 'address1', title: 'Address1' },
+            // { name: 'address2', title: 'Address2' },
+            // { name: 'city', title: 'City' },
+            // { name: 'state', title: 'State' },
+            // { name: 'zipcode', title: 'Zipcode' },
+            // { name: 'country', title: 'Country' },
             { name: 'phone', title: 'Phone' },
             { name: 'birthday', title: 'Birthday' },
             { name: 'online', title: 'Online' },
             { name: 'last_signin', title: 'Last Signin' },
             { name: 'last_signout', title: 'Last Signout' },
-            { name: 'created_at', title: 'Created At' }
+            { name: 'created_at', title: 'Created At' },
+            { name: 'deleted', title: 'Deleted' },
+            { name: 'deleted_at', title: 'Deleted At' },
           ]}>
           <h1 className="title is-1" style={{color: 'white'}}>User Table</h1>
           <Table styles="border-right: 1px solid white" />
