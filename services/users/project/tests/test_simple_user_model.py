@@ -24,7 +24,7 @@ class TestSimpleUserModel(BaseTestCase):
         db.session.add(duplicate_user)
         self.assertRaises(IntegrityError, db.session.commit)
 
-    def test_to_json(self):
+    def test_to_dict(self):
       user = add_simple_user(simple_user_dict)
       self.assertTrue(isinstance(user.to_dict(), dict))
 
