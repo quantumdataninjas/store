@@ -2,12 +2,12 @@ from datetime import datetime
 from project import db
 
 class Address(db.Model):
-    __tablename__ = "address"
+    __tablename__ = "addresses"
     id = db.Column(
         db.BigInteger, primary_key=True, autoincrement=True
     )
     users = db.relationship(
-        "User", secondary="user_address", backref="address", lazy=True
+        "User", secondary="user_addresses", backref="addresses", lazy=True
     )
     # users_history = db.relationship(
     #     "User", secondary="user_address_history", backref="address", lazy=True

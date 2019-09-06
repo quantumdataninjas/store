@@ -9,8 +9,8 @@ class User(db.Model):
     id = db.Column(
         db.BigInteger, primary_key=True, autoincrement=True
     )
-    simple_user_id = db.Column(
-        db.BigInteger, db.ForeignKey("simple_user.id"), nullable=False
+    simple_users_id = db.Column(
+        db.BigInteger, db.ForeignKey("simple_users.id"), nullable=False
     )
     username = db.Column(
         db.String(30), index=True, unique=True, nullable=False
@@ -43,7 +43,7 @@ class User(db.Model):
         db.String(128), nullable=False
     )
     main_address_id = db.Column(
-        db.BigInteger, db.ForeignKey("address.id"), nullable=False
+        db.BigInteger, db.ForeignKey("addresses.id"), nullable=False
     )
     # TODO: check null address
     # addresses = db.relationship(
@@ -53,7 +53,7 @@ class User(db.Model):
     #     back_populates="user",
     # )
     addresses = db.relationship(
-        "Address", secondary="user_address", backref="user", lazy=True
+        "Address", secondary="user_addresses", backref="users", lazy=True
     )
     # addresses = association_proxy(
     #     "user_addresses",
@@ -100,7 +100,7 @@ class User(db.Model):
     def to_dict(self):
         return {
             "id": self.id,
-            "simple_user_id": self.simple_user_id,
+            "simple_users_id": self.simple_users_id,
             "username": self.username,
             "email": self.email,
             "subscribed": self.subscribed,
