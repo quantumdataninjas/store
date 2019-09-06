@@ -3,7 +3,7 @@ from project import db
 
 
 class SimpleUser(db.Model):
-    __tablename__ = "simple_user"
+    __tablename__ = "simple_users"
     id = db.Column(
         db.BigInteger, primary_key=True, autoincrement=True
     )

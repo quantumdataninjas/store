@@ -2,7 +2,7 @@
 
 
 # class Email(db.Model):
-#     __tablename__ = "email"
+#     __tablename__ = "emails"
 #     id = db.Column(
 #         db.BigInteger, primary_key=True, autoincrement=True
 #     )

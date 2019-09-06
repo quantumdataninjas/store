@@ -3,7 +3,7 @@
 
 # TODO: setup association table
 # class Username(db.Model):
-#     __tablename__ = "username"
+#     __tablename__ = "usernames"
 #     id = db.Column(
 #         db.Integer, primary_key=True, autoincrement=True
 #     )

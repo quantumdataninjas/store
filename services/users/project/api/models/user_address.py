@@ -3,7 +3,7 @@ from project import db
 
 
 class UserAddress(db.Model):
-    __tablename__ = "user_address"
+    __tablename__ = "user_addresses"
     user_id = db.Column(
         db.BigInteger, db.ForeignKey("user.id"), primary_key=True
     )

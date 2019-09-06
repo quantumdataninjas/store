@@ -5,7 +5,7 @@ from project import db
 
 
 class User(db.Model):
-    __tablename__ = "user"
+    __tablename__ = "users"
     id = db.Column(
         db.BigInteger, primary_key=True, autoincrement=True
     )
