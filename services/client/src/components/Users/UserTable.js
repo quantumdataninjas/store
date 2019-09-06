@@ -52,6 +52,8 @@ class UserTable extends Component {
     // users: PropTypes.array.isRequired,
     users: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
+      simple_users_id: PropTypes.number.isRequired,
+      username: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
       subscribed: PropTypes.bool.isRequired,
       terms_and_conditions: PropTypes.bool.isRequired,

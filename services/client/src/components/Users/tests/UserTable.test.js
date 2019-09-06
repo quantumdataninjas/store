@@ -8,7 +8,7 @@ import UserTable from '../UserTable'
 const users = [
   {
     "id": 1,
-    "simple_user_id": 1,
+    "simple_users_id": 1,
     "username": "user",
     "email": "user@test.org",
     "subscribed": true,
@@ -34,7 +34,7 @@ const users = [
   },
   {
     "id": 2,
-    "simple_user_id": 2,
+    "simple_users_id": 2,
     "username": "user2",
     "email": "user2@test.org",
     "subscribed": true,
@@ -62,7 +62,7 @@ const users = [
 
 const cols = [
   { header: "ID", name: "id" },
-  { header: "Simple User ID", name: "simple_user_id" },
+  { header: "Simple Users ID", name: "simple_users_id" },
   { header: "Username", name: "username" },
   { header: "Email", name: "email" },
   { header: "Subscribed", name: "subscribed" },
