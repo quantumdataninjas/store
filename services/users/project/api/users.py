@@ -22,10 +22,10 @@ class Ping(Resource):
     """
 
     def get(self):
-        addresses = UserAddress.query.all()
+        # addresses = UserAddress.query.all()
         return {
             "message": "pong!",
-            "data": [address.to_dict() for address in addresses]
+            # "data": [address.to_dict() for address in addresses]
         }, 200
 
 
