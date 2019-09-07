@@ -62,6 +62,10 @@ class SimpleUserTable extends Component {
     })).isRequired,
   }
 
+  //add() {
+  //  this.setState({ items.push(//some items)});
+  //}
+
   render() {
     let { classes, simple_users } = this.props
     simple_users.forEach(user => {
@@ -93,7 +97,7 @@ class SimpleUserTable extends Component {
           {/*
             * TODO:
             * make borders around each cell
-            * 
+            *
             <Table style="border-right: 1px solid white" />
           */}
           <Table />

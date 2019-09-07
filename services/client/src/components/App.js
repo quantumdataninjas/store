@@ -5,6 +5,7 @@ import 'assets/scss/App.scss'
 import SimpleUsers from '../containers/Users/SimpleUsers'
 import UsersContainer from '../containers/Users/UsersContainer'
 import SubscribeForm from 'components/Auth/SubscribeForm'
+import SignupForm from 'components/Auth/SignupForm'
 import ProductsContainer from '../containers/ProductsContainer'
 import CartContainer from '../containers/CartContainer'
 import { Paper, Typography } from '@material-ui/core'
@@ -41,6 +42,7 @@ class App extends Component {
             <Typography component="h1">
               Store Name
             </Typography>
+            <SignupForm />
           </header>
           <SimpleUsers />
           <UsersContainer />

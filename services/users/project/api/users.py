@@ -3,7 +3,7 @@ from flask_restful import Resource, Api
 from sqlalchemy import exc
 from project import db
 from project.api.models import SimpleUser, User
-from project.utils import validate_email
+from project.utils import validate_email, send_test_email
 
 
 users_blueprint = Blueprint("users", __name__)
@@ -94,8 +94,11 @@ class Subscribe(Resource):
                 }, 4002
             db.session.add(SimpleUser(email=email, subscribed=True))
             db.session.commit()
+            # send email
+            mail_message = send_test_email()
             return {
-                "message": f"{email} is subscribed!"
+                "message": f"{email} is subscribed!",
+                "message2": mail_message
             }, 201
         except TypeError:
             return {
@@ -110,6 +113,7 @@ class Subscribe(Resource):
             return {
                 "message": f"Integrity Error: {ie}"
             }, 4003
+
         # finally:
         #     return {"message": message}, status_code
 
@@ -162,6 +166,7 @@ class Signup(Resource):
             return {
                 "message": f"Integrity Error: {ie}"
             }, 400
+
 
 
 api.add_resource(Ping, "/users/ping")
