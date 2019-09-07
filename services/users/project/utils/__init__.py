@@ -17,6 +17,7 @@ simple_user_dict2 = {"email": "user2@test.org"}
 user_dict = {
     "username": "user",
     "email": "user@test.org",
+    "password": "password",
     "subscribed": True,
     "terms_and_conditions": True,
     "firstname": "first",
@@ -36,6 +37,7 @@ user_dict = {
 user_dict2 = {
     "username": "user2",
     "email": "user2@test.org",
+    "password": "password",
     "subscribed": True,
     "terms_and_conditions": True,
     "firstname": "first",
@@ -80,7 +82,11 @@ def add_user(new_user):
     new_user["simple_user_id"] = simple_user.id
     new_user["main_address_id"] = address.id
 
+    new_user["password_hash"] = new_user["password"]
+    del new_user["password"]
+
     user = User(**new_user)
+    user.set_password_hash(new_user["password_hash"])
     user.addresses = [address]
     user.address_history = [address.id]
     db.session.add(user)
