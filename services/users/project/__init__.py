@@ -5,36 +5,23 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_debugtoolbar import DebugToolbarExtension
 from flask_cors import CORS
-<<<<<<< HEAD
 from flask_mail import Mail
-||||||| merged common ancestors
-=======
 from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
-# from flask_mail import Mail
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
 
 
 db = SQLAlchemy()
 toolbar = DebugToolbarExtension()
 cors = CORS()
-<<<<<<< HEAD
 mail = Mail()
-||||||| merged common ancestors
-
-=======
 migrate = Migrate()
 bcrypt = Bcrypt()
-# mail = Mail()
-
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
 
 def create_app(script_info=None):
     app = Flask(__name__)
 
     app_settings = os.getenv("APP_SETTINGS")
     app.config.from_object(app_settings)
-<<<<<<< HEAD
     app.config.update(
         DEBUG=True,
         #EMAIL SETTINGS
@@ -47,21 +34,12 @@ def create_app(script_info=None):
         MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")#environ['MAIL_PASSWORD']
         )
 
-||||||| merged common ancestors
-
-=======
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
     db.init_app(app)
     toolbar.init_app(app)
     cors.init_app(app)
-<<<<<<< HEAD
     mail.init_app(app)
-||||||| merged common ancestors
-=======
     migrate.init_app(app, db)
     bcrypt.init_app(app)
-    # mail.init_app(app)
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
 
     from project.api.users import users_blueprint
     app.register_blueprint(users_blueprint)

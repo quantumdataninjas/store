@@ -1,11 +1,7 @@
 from datetime import datetime
 import re
-<<<<<<< HEAD
 from flask_mail import Message
-from project import mail
-||||||| merged common ancestors
-=======
-from project import db
+from project import db, mail
 # from project.api.models.simple_user import SimpleUser
 # from project.api.models.user import User
 # from project.api.models.address import Address
@@ -15,7 +11,6 @@ from project.api.models import (
     Address,
     UserAddress,
 )
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
 
 def send_email(subject, sender, recipients, text_body, html_body):
     msg = Message(subject, sender=sender, recipients=recipients)
@@ -120,4 +115,3 @@ def add_user(new_user):
 
     db.session.commit()
     return user
-

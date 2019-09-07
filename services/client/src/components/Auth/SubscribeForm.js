@@ -60,16 +60,11 @@ export class SubscribeForm extends Component {
   }
 
   handleSubmit(event) {
-<<<<<<< HEAD
-    console.log(this.state.value)
-||||||| merged common ancestors
-=======
     this.subscribe(this.state)
     event.preventDefault()
   }
 
   subscribe(data) {
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
     axios({
       method: 'post',
       url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/subscribe`,

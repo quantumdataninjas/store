@@ -3,13 +3,6 @@ from flask import Blueprint, request
 from flask_restful import Resource, Api
 from sqlalchemy import exc
 from project import db
-<<<<<<< HEAD
-from project.api.models import SimpleUser, User
-from project.utils import validate_email, send_test_email
-||||||| merged common ancestors
-from project.api.models import SimpleUser, User
-from project.utils import validate_email
-=======
 from project.api.models import (
     SimpleUser,
     User,
@@ -17,7 +10,6 @@ from project.api.models import (
     UserAddress,
 )
 from project.utils import validate_email
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
 
 
 users_blueprint = Blueprint("users", __name__)
@@ -88,32 +80,12 @@ class Subscribe(Resource):
             if not validate_email(email):
                 return {
                     "message": f"{email} is not a valid email."
-<<<<<<< HEAD
-                }, 4001
-            simple_user = SimpleUser.query.filter_by(email=email).first()
-            if simple_user:
-||||||| merged common ancestors
-                }, 400
-            simple_user = SimpleUser.query.filter_by(email=email).first()
-            if simple_user:
-=======
                 }, 400
             if SimpleUser.query.filter_by(email=email).first():
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
                 return {
-<<<<<<< HEAD
-                    "message": f"User {email} is already subscribed."
-                }, 4002
-            db.session.add(SimpleUser(email=email, subscribed=True))
-||||||| merged common ancestors
-                    "message": f"User {email} is already subscribed."
-                }, 400
-            db.session.add(SimpleUser(email=email, subscribed=True))
-=======
                     "message": f"Email {email} is already subscribed."
                 }, 400
             db.session.add(SimpleUser(**post_data))
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
             db.session.commit()
             # send email
             mail_message = send_test_email()
@@ -270,10 +242,6 @@ class Signup(Resource):
             }, 400
 
 
-<<<<<<< HEAD
-
-||||||| merged common ancestors
-=======
 class Delete(Resource):
     def get(self, user_id):
         """
@@ -304,7 +272,6 @@ class Delete(Resource):
             }, 400
 
 
->>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b
 api.add_resource(Ping, "/users/ping")
 api.add_resource(SimpleUsers, "/users/simple")
 api.add_resource(GetSimpleUser, "/users/simple/<simple_user_id>")
