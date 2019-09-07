@@ -2,36 +2,33 @@
 
 exports[`UserTable Component renders a snapshot 1`] = `
 <div
-  className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+  className="MuiPaper-root MuiPaper-elevation1 UserTable-container-1 MuiPaper-rounded"
 >
-  <h1
-    className="title is-1"
-    style={
-      Object {
-        "color": "white",
-      }
-    }
-  >
-    User Table
-  </h1>
   <div
-    className="RootBase-root-28"
+    className="MuiPaper-root MuiPaper-elevation1 UserTable-titlePaper-2 MuiPaper-rounded"
+  >
+    <h2
+      className="MuiTypography-root UserTable-title-3 MuiTypography-h1"
+    >
+      Users
+    </h2>
+  </div>
+  <div
+    className="RootBase-root-64"
   >
     <div
-      className="TableContainer-root-29"
+      className="TableContainer-root-65"
     >
       <div>
         <table
-          className="MuiTable-root Table-table-30"
+          className="MuiTable-root Table-table-66"
           style={
             Object {
-              "minWidth": "2400px",
+              "minWidth": "2160px",
             }
           }
         >
           <colgroup>
-            <col />
-            <col />
             <col />
             <col />
             <col />
@@ -59,19 +56,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
             >
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       ID
                     </span>
@@ -80,19 +77,61 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
+                    >
+                      Simple User ID
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-87"
+                >
+                  <div
+                    className="Content-content-100"
+                  >
+                    <span
+                      className="Title-title-103"
+                    >
+                      Username
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-87"
+                >
+                  <div
+                    className="Content-content-100"
+                  >
+                    <span
+                      className="Title-title-103"
                     >
                       Email
                     </span>
@@ -101,19 +140,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Subscribed
                     </span>
@@ -122,19 +161,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Terms And Conditions
                     </span>
@@ -143,19 +182,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Verified
                     </span>
@@ -164,19 +203,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       First Name
                     </span>
@@ -185,19 +224,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Middle Name
                     </span>
@@ -206,19 +245,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Last Name
                     </span>
@@ -227,145 +266,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
-                    >
-                      Address1
-                    </span>
-                  </div>
-                </div>
-              </th>
-              <th
-                aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
-                colSpan={1}
-                scope="col"
-                style={null}
-              >
-                <div
-                  className="TableHeaderCell-container-51"
-                >
-                  <div
-                    className="Content-content-64"
-                  >
-                    <span
-                      className="Title-title-67"
-                    >
-                      Address2
-                    </span>
-                  </div>
-                </div>
-              </th>
-              <th
-                aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
-                colSpan={1}
-                scope="col"
-                style={null}
-              >
-                <div
-                  className="TableHeaderCell-container-51"
-                >
-                  <div
-                    className="Content-content-64"
-                  >
-                    <span
-                      className="Title-title-67"
-                    >
-                      City
-                    </span>
-                  </div>
-                </div>
-              </th>
-              <th
-                aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
-                colSpan={1}
-                scope="col"
-                style={null}
-              >
-                <div
-                  className="TableHeaderCell-container-51"
-                >
-                  <div
-                    className="Content-content-64"
-                  >
-                    <span
-                      className="Title-title-67"
-                    >
-                      State
-                    </span>
-                  </div>
-                </div>
-              </th>
-              <th
-                aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
-                colSpan={1}
-                scope="col"
-                style={null}
-              >
-                <div
-                  className="TableHeaderCell-container-51"
-                >
-                  <div
-                    className="Content-content-64"
-                  >
-                    <span
-                      className="Title-title-67"
-                    >
-                      Zipcode
-                    </span>
-                  </div>
-                </div>
-              </th>
-              <th
-                aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
-                colSpan={1}
-                scope="col"
-                style={null}
-              >
-                <div
-                  className="TableHeaderCell-container-51"
-                >
-                  <div
-                    className="Content-content-64"
-                  >
-                    <span
-                      className="Title-title-67"
-                    >
-                      Country
-                    </span>
-                  </div>
-                </div>
-              </th>
-              <th
-                aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
-                colSpan={1}
-                scope="col"
-                style={null}
-              >
-                <div
-                  className="TableHeaderCell-container-51"
-                >
-                  <div
-                    className="Content-content-64"
-                  >
-                    <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Phone
                     </span>
@@ -374,19 +287,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Birthday
                     </span>
@@ -395,19 +308,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Online
                     </span>
@@ -416,19 +329,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Last Signin
                     </span>
@@ -437,19 +350,19 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Last Signout
                     </span>
@@ -458,21 +371,63 @@ exports[`UserTable Component renders a snapshot 1`] = `
               </th>
               <th
                 aria-sort={null}
-                className="MuiTableCell-root TableHeaderCell-cell-42 TableHeaderCell-cellNoWrap-52 MuiTableCell-head"
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
                 colSpan={1}
                 scope="col"
                 style={null}
               >
                 <div
-                  className="TableHeaderCell-container-51"
+                  className="TableHeaderCell-container-87"
                 >
                   <div
-                    className="Content-content-64"
+                    className="Content-content-100"
                   >
                     <span
-                      className="Title-title-67"
+                      className="Title-title-103"
                     >
                       Created At
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-87"
+                >
+                  <div
+                    className="Content-content-100"
+                  >
+                    <span
+                      className="Title-title-103"
+                    >
+                      Deleted
+                    </span>
+                  </div>
+                </div>
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root TableHeaderCell-cell-78 TableHeaderCell-cellNoWrap-88 MuiTableCell-head"
+                colSpan={1}
+                scope="col"
+                style={null}
+              >
+                <div
+                  className="TableHeaderCell-container-87"
+                >
+                  <div
+                    className="Content-content-100"
+                  >
+                    <span
+                      className="Title-title-103"
+                    >
+                      Deleted At
                     </span>
                   </div>
                 </div>
@@ -487,143 +442,129 @@ exports[`UserTable Component renders a snapshot 1`] = `
             >
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 1
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                1
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                user
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 user@test.org
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 false
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 first
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 last
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                1523 John St.
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                Fort Lee
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                NJ
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                07024
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                United States
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 1/1/1990
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                false
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                undefined
               </td>
             </tr>
             <tr
@@ -631,143 +572,129 @@ exports[`UserTable Component renders a snapshot 1`] = `
             >
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 2
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                2
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                user2
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 user2@test.org
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 false
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 first
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 last
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                1523 John St.
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                Fort Lee
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                NJ
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                07024
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                United States
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
-                colSpan={1}
-              >
-                
-              </td>
-              <td
-                aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 1/1/1990
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 true
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
               </td>
               <td
                 aria-sort={null}
-                className="MuiTableCell-root TableCell-cell-72 TableCell-cellNoWrap-76 MuiTableCell-body"
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
                 colSpan={1}
               >
                 8/26/2019
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                false
+              </td>
+              <td
+                aria-sort={null}
+                className="MuiTableCell-root TableCell-cell-108 TableCell-cellNoWrap-112 MuiTableCell-body"
+                colSpan={1}
+              >
+                undefined
               </td>
             </tr>
           </tbody>

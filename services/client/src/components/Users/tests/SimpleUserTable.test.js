@@ -1,4 +1,4 @@
-import _ from 'lodash'
+import { cloneDeep } from 'lodash'
 import React from 'react'
 import { mount, shallow } from 'enzyme'
 import renderer from 'react-test-renderer'
@@ -76,8 +76,9 @@ describe('SimpleUserTable Component', () => {
   })
 
   it('renders', () => {
+    const simple_users_clone = cloneDeep(simple_users)
     const wrapper = mount(
-      <SimpleUserTable simple_users={_.cloneDeep(simple_users)} />
+      <SimpleUserTable simple_users={simple_users_clone} />
     )
     const table = wrapper.find('table')
     expect(table).toHaveLength(1)
@@ -107,8 +108,9 @@ describe('SimpleUserTable Component', () => {
   })
 
   it('renders a snapshot', () => {
+    const simple_users_clone = cloneDeep(simple_users)
     const tree = renderer.create(
-      <SimpleUserTable simple_users={_.cloneDeep(simple_users)} />
+      <SimpleUserTable simple_users={simple_users_clone} />
     )
     expect(tree).toMatchSnapshot()
   })

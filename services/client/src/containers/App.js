@@ -2,12 +2,20 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import logo from 'assets/img/logo.svg'
 import 'assets/scss/App.scss'
-import SimpleUsers from '../containers/Users/SimpleUsers'
-import UsersContainer from '../containers/Users/UsersContainer'
+import SimpleUsersContainer from './Users/SimpleUsersContainer'
+import UsersContainer from './Users/UsersContainer'
 import SubscribeForm from 'components/Auth/SubscribeForm'
+<<<<<<< HEAD:services/client/src/components/App.js
 import SignupForm from 'components/Auth/SignupForm'
 import ProductsContainer from '../containers/ProductsContainer'
 import CartContainer from '../containers/CartContainer'
+||||||| merged common ancestors:services/client/src/components/App.js
+import ProductsContainer from '../containers/ProductsContainer'
+import CartContainer from '../containers/CartContainer'
+=======
+import ProductsContainer from './ProductsContainer'
+import CartContainer from './CartContainer'
+>>>>>>> 66ad30331d8b93be03074765d0c642358ca2a11b:services/client/src/containers/App.js
 import { Paper, Typography } from '@material-ui/core'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
@@ -44,7 +52,7 @@ class App extends Component {
             </Typography>
             <SignupForm />
           </header>
-          <SimpleUsers />
+          <SimpleUsersContainer />
           <UsersContainer />
           <ProductsContainer />
           <CartContainer />

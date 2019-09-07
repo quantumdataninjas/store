@@ -50,6 +50,7 @@ class SimpleUserTable extends Component {
 
   static propTypes = {
     classes: PropTypes.object.isRequired,
+    // simple_users: PropTypes.array.isRequired,
     simple_users: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
       email: PropTypes.string.isRequired,
@@ -79,9 +80,7 @@ class SimpleUserTable extends Component {
     })
 
     return (
-      <Paper
-        className={classes.container}
-      >
+      <Paper className={classes.container}>
         <Grid
           rows={simple_users}
           columns={[
