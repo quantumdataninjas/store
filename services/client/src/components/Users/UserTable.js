@@ -129,7 +129,8 @@ class UserTable extends Component {
               Users
             </Typography>
           </Paper>
-          <Table styles="border-right: 1px solid white" />
+          {/* <Table style={{borderRight: "white"}} /> */}
+          <Table />
           <TableHeaderRow />
         </Grid>
       </Paper>
