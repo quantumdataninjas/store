@@ -209,7 +209,10 @@ class Signup(Resource):
             post_data["main_address_id"] = new_address.id
             del post_data["address"]
 
+            post_data["password_hash"] = post_data["password"]
+            del post_data["password"]
             user = User(**post_data)
+            user.set_password_hash(post_data["password_hash"])
             db.session.add(user)
 
             simple_user.user = user

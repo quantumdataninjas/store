@@ -1,6 +1,8 @@
 from datetime import datetime
 # from sqlalchemy.ext.associationproxy import association_proxy
-from project import db
+# from bcrypt import generate_password_hash
+from project import db, bcrypt
+# from project.bcrypt import generate_password_hash
 # from .user_address import UserAddress, UserAddressHistory
 
 
@@ -17,6 +19,9 @@ class User(db.Model):
     )
     email = db.Column(
         db.String(128), index=True, unique=True, nullable=False
+    )
+    password_hash = db.Column(
+        db.String(255), nullable=False
     )
     # ip = db.Column(
     #     db.String(15), index=True, nullable=False
@@ -93,6 +98,9 @@ class User(db.Model):
     unsubscribed_at = db.Column(
         db.DateTime, index=True, nullable=True
     )
+    
+    def set_password_hash(self, password):
+        self.password_hash = bcrypt.generate_password_hash(password)
 
     def __repr__(self):
         return f"<User {self.username}>"
@@ -103,6 +111,8 @@ class User(db.Model):
             "simple_user_id": self.simple_user_id,
             "username": self.username,
             "email": self.email,
+            # TODO: hash password
+            "password_hash": self.password_hash,
             "subscribed": self.subscribed,
             "terms_and_conditions": self.terms_and_conditions,
             "verified": self.verified,
