@@ -211,28 +211,28 @@ class TestUsersService(BaseTestCase):
                 data["message"],
             )
 
-    def test_unsubscribe(self):
-        """
-        Ensure a new user can subscribe for emails.
-        """
-        with self.client:
-            response = self.client.post(
-                "/users/subscribe",
-                data=json.dumps(simple_user_dict),
-                content_type="application/json",
-            )
-            data = json.loads(response.data.decode())
-            self.assertEqual(response.status_code, 201)
-            simple_user = SimpleUser.query.filter_by(
-                email=simple_user_dict["email"]
-            ).first()
-            self.assertEqual(
-                simple_user.email,
-                simple_user_dict["email"]
-            )
-            self.assertIn(
-                f"{simple_user.email} is subscribed!", data["message"]
-            )
+    # def test_unsubscribe(self):
+    #     """
+    #     Ensure a new user can subscribe for emails.
+    #     """
+    #     with self.client:
+    #         response = self.client.post(
+    #             "/users/unsubscribe",
+    #             data=json.dumps(simple_user_dict),
+    #             content_type="application/json",
+    #         )
+    #         data = json.loads(response.data.decode())
+    #         self.assertEqual(response.status_code, 201)
+    #         simple_user = SimpleUser.query.filter_by(
+    #             email=simple_user_dict["email"]
+    #         ).first()
+    #         self.assertEqual(
+    #             simple_user.email,
+    #             simple_user_dict["email"]
+    #         )
+    #         self.assertIn(
+    #             f"{simple_user.email} is subscribed!", data["message"]
+    #         )
 
     def test_get_all_users(self):
         """
