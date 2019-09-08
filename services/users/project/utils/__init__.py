@@ -2,9 +2,6 @@ from datetime import datetime
 import re
 from flask_mail import Message
 from project import db, mail
-# from project.api.models.simple_user import SimpleUser
-# from project.api.models.user import User
-# from project.api.models.address import Address
 from project.api.models import (
     SimpleUser,
     User,
@@ -12,30 +9,10 @@ from project.api.models import (
     UserAddress,
 )
 
-# def send_email(subject, sender, recipients, text_body, html_body):
-#     msg = Message(subject, sender=sender, recipients=recipients)
-#     msg.body = text_body
-#     msg.html = html_body
-#     mail.send(msg)
-
-#@app.route('/send-mail/')
-def send_test_email():
-    try:
-        msg = Message("Send Mail Tutorial!",
-            sender="hardheadhacker@gmail.com",
-            recipients=["hardheadhack@gmail.com"])
-        msg.body = "Yo!\nHave you heard the good word of Python???"
-        msg.html = '<h1>HTML body</h1>'
-        mail.send(msg)
-        #print ('mail')
-        #return 'Mail sent!'
-    except Exception as e:
-        #console.log('yo')
-        return(str(e))
-
 simple_user_dict = {"email": "user@test.org"}
 simple_user_dict2 = {"email": "user2@test.org"}
 user_dict = {
+    "simple_user_id": 1,
     "username": "user",
     "email": "user@test.org",
     "password": "password",
@@ -56,6 +33,7 @@ user_dict = {
     "birthday": str(datetime(1990, 1, 1)),
 }
 user_dict2 = {
+    "simple_user_id": 2,
     "username": "user2",
     "email": "user2@test.org",
     "password": "password",
@@ -82,6 +60,25 @@ def validate_email(email):
         r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)",
         email
     )
+
+def send_email(subject, sender, recipients, text_body, html_body):
+    msg = Message(subject, sender=sender, recipients=recipients)
+    msg.body = text_body
+    msg.html = html_body
+    mail.send(msg)
+
+#@app.route('/send-mail/')
+def send_test_email():
+    try:
+        msg = Message("Send Mail Tutorial!",
+            sender="hardheadhacker@gmail.com",
+            recipients=["hardheadhack@gmail.com"])
+        msg.body = "Yo!\nHave you heard the good word of Python???"
+        msg.html = '<h1>HTML body</h1>'
+        mail.send(msg)
+        return 'Mail sent!'
+    except Exception as e:
+        return(str(e))
 
 def add_simple_user(new_simple_user):
     simple_user = SimpleUser(**new_simple_user)

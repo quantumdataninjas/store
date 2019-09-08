@@ -18,30 +18,6 @@ from project.utils import (
 )
 
 
-# def add_simple_user(new_simple_user):
-#     simple_user = simpleuser(**new_simple_user)
-#     db.session.add(simple_user)
-#     db.session.commit()
-#     return simple_user
-
-
-# def add_user(new_user):
-#     simple_user = simpleuser.query.filter_by(email=new_user["email"]).first()
-#     if not simple_user:
-#         simple_user = add_simple_user({"email": new_user["email"]})
-#     # new_user["simple_user_id"] = simple_user.id
-#     addresses = new_user["addresses"]
-#     del new_user["addresses"]
-#     user = user(**new_user, simple_user_id=simple_user.id)
-#     db.session.add(user)
-#     for i, address in enumerate(addresses):
-#         addresses[i] = address(**address, user_id=user.id)
-#         db.session.add(addresses[i])
-#     user.addresses = addresses
-#     db.session.commit()
-#     return user
-
-
 class TestUsersService(BaseTestCase):
     """
     Tests for the Users Service.
@@ -232,6 +208,14 @@ class TestUsersService(BaseTestCase):
             )
             self.assertIn(
                 f"{simple_user.email} is subscribed!", data["message"]
+            )
+            response = self.client.get(f"/users/unsubscribe/{simple_user.id}")
+            data = json.loads(response.data.decode())
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(simple_user.subscribed, False)
+            self.assertIn(
+                f"{simple_user.email} successfully unsubscribed!",
+                data["message"]
             )
 
     def test_get_all_users(self):

@@ -23,8 +23,14 @@ def create_app(script_info=None):
     app_settings = os.getenv("APP_SETTINGS")
     app.config.from_object(app_settings)
     app.config.update(
+        # DEBUG=False,
         DEBUG=True,
+<<<<<<< HEAD
         MAIL_DEBUG=False,#app.debug,
+||||||| merged common ancestors
+=======
+        MAIL_DEBUG=False,
+>>>>>>> d3b3870dc8f143fe10a5a860e2724f0585bcc427
         #EMAIL SETTINGS
         MAIL_SERVER='smtp.gmail.com',
         MAIL_PORT=465,
@@ -33,7 +39,7 @@ def create_app(script_info=None):
         #MAIL_USE_TLS=1,
         MAIL_USERNAME = 'hardheadhacker@gmail.com',
         MAIL_PASSWORD = os.getenv("MAIL_PASSWORD")#environ['MAIL_PASSWORD']
-        )
+    )
 
     db.init_app(app)
     toolbar.init_app(app)
