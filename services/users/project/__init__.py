@@ -24,6 +24,7 @@ def create_app(script_info=None):
     app.config.from_object(app_settings)
     app.config.update(
         DEBUG=True,
+        MAIL_DEBUG=False,#app.debug,
         #EMAIL SETTINGS
         MAIL_SERVER='smtp.gmail.com',
         MAIL_PORT=465,

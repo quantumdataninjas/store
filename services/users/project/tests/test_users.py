@@ -213,7 +213,7 @@ class TestUsersService(BaseTestCase):
 
     def test_unsubscribe(self):
         """
-        Ensure a new user can subscribe for emails.
+        Ensure a new user can unsubscribe from emails.
         """
         with self.client:
             response = self.client.post(

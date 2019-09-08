@@ -12,11 +12,11 @@ from project.api.models import (
     UserAddress,
 )
 
-def send_email(subject, sender, recipients, text_body, html_body):
-    msg = Message(subject, sender=sender, recipients=recipients)
-    msg.body = text_body
-    msg.html = html_body
-    mail.send(msg)
+# def send_email(subject, sender, recipients, text_body, html_body):
+#     msg = Message(subject, sender=sender, recipients=recipients)
+#     msg.body = text_body
+#     msg.html = html_body
+#     mail.send(msg)
 
 #@app.route('/send-mail/')
 def send_test_email():
@@ -27,10 +27,10 @@ def send_test_email():
         msg.body = "Yo!\nHave you heard the good word of Python???"
         msg.html = '<h1>HTML body</h1>'
         mail.send(msg)
-        print ('mail')
-        return 'Mail sent!'
+        #print ('mail')
+        #return 'Mail sent!'
     except Exception as e:
-        console.log('yo')
+        #console.log('yo')
         return(str(e))
 
 simple_user_dict = {"email": "user@test.org"}

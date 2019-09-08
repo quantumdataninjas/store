@@ -17,7 +17,7 @@ services:
       - APP_SETTINGS=project.config.DevelopmentConfig
       - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
       - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
-      - MAIL_PASSWORD=${MAIL_PASS}
+      - MAIL_PASSWORD=${MAIL_PASSWORD}
     depends_on:
       - users-db
 
@@ -30,7 +30,7 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  
+
   client:
     build:
       context: ./services/client
