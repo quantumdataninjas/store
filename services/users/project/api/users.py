@@ -125,12 +125,12 @@ class Unsubscribe(Resource):
                     "message": "User does not exist.",
                 }, 404
             simple_user.subscribed = False
-            simple_user.unsubscribed_at = datetime.utcnow
+            simple_user.unsubscribed_at = datetime.utcnow()
             user = User.query.filter_by(
                 simple_user_id=int(simple_user_id)
             )
-            user.subsribed = False
-            user.unsubscribed_at = datetime.utcnow
+            user.subscribed = False
+            user.unsubscribed_at = datetime.utcnow()
             db.session.commit()
             return {
                 "message": f"{simple_user.email} successfully unsubscribed!",
