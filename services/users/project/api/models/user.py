@@ -35,9 +35,6 @@ class User(db.Model):
     verified = db.Column(
         db.Boolean, default=False, nullable=False
     )
-    # hash = db.Column(
-    #     db.String(128), nullable=False
-    # )
     firstname = db.Column(
         db.String(128), nullable=False
     )

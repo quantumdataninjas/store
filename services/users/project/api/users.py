@@ -9,7 +9,7 @@ from project.api.models import (
     Address,
     UserAddress,
 )
-from project.utils import validate_email
+from project.utils import validate_email, send_test_email
 
 
 users_blueprint = Blueprint("users", __name__)
