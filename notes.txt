@@ -1,0 +1,5 @@
+look into chodikar
+https://github.com/paulmillr/chokidar
+https://create-react-app.dev/docs/troubleshooting
+
+TODO:
