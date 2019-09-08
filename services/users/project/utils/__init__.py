@@ -27,7 +27,6 @@ def send_test_email():
         msg.body = "Yo!\nHave you heard the good word of Python???"
         msg.html = '<h1>HTML body</h1>'
         mail.send(msg)
-        print ('mail')
         return 'Mail sent!'
     except Exception as e:
         return(str(e))
