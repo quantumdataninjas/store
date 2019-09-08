@@ -90,9 +90,9 @@ export class SubscribeForm extends Component {
           <TextField
             required
             id="email-field"
-            type="email"
-            name="email"
-            label="Email"
+            type="email-type"
+            name="email-name"
+            label="Email-label"
             className={classes.textField}
             onChange={handleChange}
             margin="normal"

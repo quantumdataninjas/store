@@ -9,7 +9,7 @@ from project.api.models import (
     Address,
     UserAddress,
 )
-from project.utils import validate_email
+from project.utils import validate_email, send_test_email
 
 
 users_blueprint = Blueprint("users", __name__)
@@ -105,7 +105,7 @@ class Subscribe(Resource):
             db.session.rollback()
             return {
                 "message": f"Integrity Error: {ie}"
-            }, 4003
+            }, 400
 
         # finally:
         #     return {"message": message}, status_code

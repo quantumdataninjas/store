@@ -30,6 +30,7 @@ def send_test_email():
         print ('mail')
         return 'Mail sent!'
     except Exception as e:
+        console.log('yo')
         return(str(e))
 
 simple_user_dict = {"email": "user@test.org"}
