@@ -25,12 +25,7 @@ def create_app(script_info=None):
     app.config.update(
         # DEBUG=False,
         DEBUG=True,
-<<<<<<< HEAD
-        MAIL_DEBUG=False,#app.debug,
-||||||| merged common ancestors
-=======
         MAIL_DEBUG=False,
->>>>>>> d3b3870dc8f143fe10a5a860e2724f0585bcc427
         #EMAIL SETTINGS
         MAIL_SERVER='smtp.gmail.com',
         MAIL_PORT=465,
