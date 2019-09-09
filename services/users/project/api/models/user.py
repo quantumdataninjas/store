@@ -1,7 +1,9 @@
 from datetime import datetime
+from flask import current_app
 # from sqlalchemy.ext.associationproxy import association_proxy
 # from bcrypt import generate_password_hash
-from project import db, bcrypt
+# from project import db, bcrypt
+from project import db, argon2
 # from project.bcrypt import generate_password_hash
 # from .user_address import UserAddress, UserAddressHistory
 
@@ -97,7 +99,11 @@ class User(db.Model):
     )
     
     def set_password_hash(self, password):
-        self.password_hash = bcrypt.generate_password_hash(password)
+        # self.password_hash = bcrypt.generate_password_hash(password)
+        self.password_hash = argon2.generate_password_hash(
+            password,
+            current_app.config.get("BCRYPT_LOG_ROUNDS")
+        )
 
     def __repr__(self):
         return f"<User {self.username}>"
