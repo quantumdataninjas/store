@@ -18,6 +18,7 @@ services:
       - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
       - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
       - MAIL_PASSWORD=${MAIL_PASSWORD}
+      - SECRET_KEY=my_precious
     depends_on:
       - users-db
 
