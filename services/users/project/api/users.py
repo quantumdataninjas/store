@@ -176,70 +176,74 @@ class GetUser(Resource):
             }, 404
 
 
-class Signup(Resource):
-    def post(self):
-        post_data = request.get_json()
-        if not post_data:
-            return {
-                "message": "Invalid payload."
-            }, 400
-        try:
-            username = post_data["username"]
-            email = post_data["email"]
-            if not validate_email(email):
-                return {
-                    "message": f"{email} is not a valid email."
-                }
-            if User.query.filter_by(email=email).first():
-                return {
-                    "message": f"User {email} already exists."
-                }, 400
-            elif User.query.filter_by(username=username).first():
-                return {
-                    "message": f"User {username} already exists."
-                }, 400
-            simple_user = SimpleUser.query.filter_by(email=email).first()
-            if simple_user:
-                simple_user.signed_up = True
-            else:
-                simple_user = SimpleUser(email=email, signed_up=True)
-                db.session.add(simple_user)
-                db.session.commit()
-            post_data["simple_user_id"] = simple_user.id
+# class Signup(Resource):
+#     def post(self):
+#         post_data = request.get_json()
+#         if not post_data:
+#             return {
+#                 "message": "Invalid payload."
+#             }, 400
+#         try:
+#             username = post_data["username"]
+#             email = post_data["email"]
+#             if not validate_email(email):
+#                 return {
+#                     "message": f"{email} is not a valid email."
+#                 }
+#             if User.query.filter_by(email=email).first():
+#                 return {
+#                     "message": f"User {email} already exists."
+#                 }, 400
+#             elif User.query.filter_by(username=username).first():
+#                 return {
+#                     "message": f"User {username} already exists."
+#                 }, 400
+#             simple_user = SimpleUser.query.filter_by(email=email).first()
+#             if simple_user:
+#                 simple_user.signed_up = True
+#             else:
+#                 simple_user = SimpleUser(email=email, signed_up=True)
+#                 db.session.add(simple_user)
+#                 db.session.commit()
+#             post_data["simple_user_id"] = simple_user.id
 
-            new_address = Address(**post_data["address"])
-            db.session.add(new_address)
-            db.session.commit()
-            post_data["main_address_id"] = new_address.id
-            del post_data["address"]
+#             new_address = Address(**post_data["address"])
+#             db.session.add(new_address)
+#             db.session.commit()
+#             post_data["main_address_id"] = new_address.id
+#             del post_data["address"]
 
-            post_data["password_hash"] = post_data["password"]
-            del post_data["password"]
-            user = User(**post_data)
-            user.set_password_hash(post_data["password_hash"])
-            db.session.add(user)
+#             post_data["password_hash"] = post_data["password"]
+#             del post_data["password"]
+#             user = User(**post_data)
+#             user.set_password_hash(post_data["password_hash"])
+#             db.session.add(user)
 
-            simple_user.user = user
-            user.addresses = [new_address]
-            user.address_history = [new_address.id]
+#             simple_user.user = user
+#             user.addresses = [new_address]
+#             user.address_history = [new_address.id]
 
-            db.session.commit()
-            return {
-                "message": f"{username} has signed up!"
-            }, 201
-        except TypeError as te:
-            return {
-                "message": f"Type Error: {te}"
-            }, 400
-        except KeyError as ke:
-            return {
-                "message": f"Key Error: {ke}"
-            }, 400
-        except exc.IntegrityError as ie:
-            db.session.rollback()
-            return {
-                "message": f"Integrity Error: {ie}"
-            }, 400
+#             db.session.commit()
+
+#             auth_token = user.encode_auth_token(user.id)
+#             return {
+#                 "status": "success",
+#                 "message": f"{username} has signed up!"
+#                 "auth_token": auth_token.decode()
+#             }, 201
+#         except TypeError as te:
+#             return {
+#                 "message": f"Type Error: {te}"
+#             }, 400
+#         except KeyError as ke:
+#             return {
+#                 "message": f"Key Error: {ke}"
+#             }, 400
+#         except exc.IntegrityError as ie:
+#             db.session.rollback()
+#             return {
+#                 "message": f"Integrity Error: {ie}"
+#             }, 400
 
 
 class Delete(Resource):
@@ -279,5 +283,5 @@ api.add_resource(Subscribe, "/users/subscribe")
 api.add_resource(Unsubscribe, "/users/unsubscribe/<simple_user_id>")
 api.add_resource(GetUsers, "/users")
 api.add_resource(GetUser, "/users", "/users/<user_id>")
-api.add_resource(Signup, "/users/signup")
+# api.add_resource(Signup, "/users/signup")
 api.add_resource(Delete, "/users/delete/<simple_user_id>")
