@@ -11,7 +11,7 @@ from project.utils import (
 from sqlalchemy.exc import IntegrityError
 
 
-class TestSimpleUserModel(BaseTestCase):
+class TestUserModel(BaseTestCase):
 
     def test_add_simple_user(self):
         user = add_user(deepcopy(user_dict))
@@ -34,6 +34,17 @@ class TestSimpleUserModel(BaseTestCase):
         user1 = add_user(deepcopy(user_dict))
         user2 = add_user(deepcopy(user_dict2))
         self.assertNotEqual(user1.password_hash, user2.password_hash)
+    
+    def test_encode_auth_token(self):
+        user = add_user(deepcopy(user_dict))
+        auth_token = user.encode_auth_token(user.id)
+        self.assertTrue(isinstance(auth_token, bytes))
+
+    def test_decode_auth_token(self):
+        user = add_user(deepcopy(user_dict))
+        auth_token = user.encode_auth_token(user.id)
+        self.assertTrue(isinstance(auth_token, bytes))
+        self.assertEqual(User.decode_auth_token(auth_token), user.id)
 
 
 if __name__ == '__main__':
