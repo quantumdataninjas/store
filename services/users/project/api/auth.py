@@ -119,6 +119,28 @@ class Signin(Resource):
                 "message": f"Exception: {e}"
             }, 500
 
+class Signout(Resource):
+    """
+    Signout API
+    """
+
+    def get(self):
+        auth_header = request.headers.get("Authorization")
+        if not auth_header:
+            return {
+                "message": "Provide a valid auth token."
+            }, 403
+        auth_token = auth_header.split(" ")[1]
+        resp = User.decode_auth_token(auth_token)
+        if isinstance(resp, str):
+            return {
+                "message": resp
+            }, 401
+        return {
+            "message": "Successfully signed out."
+        }, 200
+
 
 api.add_resource(Signup, "/auth/signup")
 api.add_resource(Signin, "/auth/signin")
+api.add_resource(Signout, "/auth/signout")
