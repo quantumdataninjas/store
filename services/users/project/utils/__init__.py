@@ -11,7 +11,7 @@ from project.api.models import (
 
 simple_user_dict = {"email": "user@test.org"}
 simple_user_dict2 = {"email": "user2@test.org"}
-user_dict = {
+user_dict0 = {
     "username": "user",
     "email": "user@test.org",
     "password": "password",
@@ -27,7 +27,7 @@ user_dict = {
     "birthday": str(datetime(1990, 1, 1))
 }
 
-user_dict1 = {
+user_dict = {
     "simple_user_id": 1,
     "username": "user",
     "email": "user@test.org",
