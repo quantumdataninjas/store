@@ -3,7 +3,17 @@ import PropTypes from 'prop-types'
 import axios from 'axios'
 import clsx from 'clsx'
 import { Paper, TextField, Button, withStyles } from '@material-ui/core'
-import { Select , NativeSelect , InputLabel, FormControl } from '@material-ui/core'
+import { FormHelperText, Select , NativeSelect , InputLabel, FormControl } from '@material-ui/core'
+//import FormHelperText from '@material-ui/core/FormHelperText';
+
+// import 'date-fns';
+// import Grid from '@material-ui/core/Grid';
+// import DateFnsUtils from '@date-io/date-fns';
+// import {
+//   MuiPickersUtilsProvider,
+//   KeyboardTimePicker,
+//   KeyboardDatePicker,
+// } from '@material-ui/pickers';
 
 const styles = theme => ({
   container: {
@@ -47,29 +57,61 @@ export class SignupForm extends Component {
     super()
     this.state = {
       firstname: '',
+      //middlename: '',
       lastname: '',
       email: '',
       password: '',
-      repassword: '',
-      role: ''
+      birthday: '',
+      username: '',
+      //phone: ''
+      address:
+      {
+        address1: '',
+        city: '',
+        zipcode: '',
+        state: '',
+        country: ''
+      }
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleAddressChange = this.handleAddressChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
-    this.setState({email: event.target.value})
-    //this.setState({
-    //  [event.target.name]: event.target.value
-    //})
+    this.setState({
+      [event.target.name]: event.target.value
+    })
   }
 
   handleSubmit(event) {
-    console.log(this.state.value)
+    //console.log(this.state.value)
+    this.signup(this.state)
+    event.preventDefault()
+    console.log(this.state)
+  }
+
+  handleAddressChange(event) {
+    const address = this.state.address
+    address[event.target.name] = event.target.value
+    this.setState({
+      address: address
+    })
+    // const newState = this.state
+    // newState.address[event.target.name] = event.target.value
+    // this.setState(newState/)
+    // this.setState({
+    //   "address": {
+    //     [event.target.name]: event.target.value
+    //   }
+    // })
+  }
+
+  signup(data) {
     axios({
       method: 'post',
-      url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/signup`,
-      data: this.state,
+      url: `${process.env.REACT_APP_USERS_SERVICE_URL}/users/auth/signup`,
+      data: data,
       headers: {
         'Content-Type': 'application/json'
       }
@@ -80,21 +122,31 @@ export class SignupForm extends Component {
     .catch((err) => {
       console.log(err)
     })
-    event.preventDefault()
   }
 
   render() {
-    const { handleSubmit, handleChange } = this
+    const { handleSubmit, handleChange, handleAddressChange } = this
     const { classes } = this.props
     return (
       <Paper className={classes.container}>
         <form className={classes.form} onSubmit={handleSubmit} autoComplete="on">
           <TextField
             required
+            id="username-field"
+            type="text"
+            name="username"
+            label="Username"
+            className={classes.textField}
+            onChange={handleChange}
+            margin="normal"
+          />
+          <br />
+          <TextField
+            required
             id="firstname-field"
-            type="firstname"
+            type="text"
             name="firstname"
-            label="FirstName"
+            label="First Name"
             className={classes.textField}
             onChange={handleChange}
             margin="normal"
@@ -103,14 +155,14 @@ export class SignupForm extends Component {
           <TextField
             required
             id="lastname-field"
-            type="lastname"
+            type="text"
             name="lastname"
-            label="LastName"
+            label="Last Name"
             className={classes.textField}
             onChange={handleChange}
             margin="normal"
           />
-          <div>
+          <br />
           <TextField
             required
             id="email-field"
@@ -121,8 +173,17 @@ export class SignupForm extends Component {
             onChange={handleChange}
             margin="normal"
           />
-          </div>
-          <div>
+          <br />
+          <TextField
+            required
+            id="birthday-field"
+            type="date"
+            name="birthday"
+            className={classes.textField}
+            onChange={handleChange}
+            margin="normal"
+          />
+          <br />
           <TextField
             required
             id="password-field"
@@ -133,69 +194,79 @@ export class SignupForm extends Component {
             onChange={handleChange}
             margin="normal"
           />
-          </div>
-          <div>
+          <br />
           <TextField
             required
-            id="repassword-field"
-            type="repassword"
-            name="repassword"
-            label="Repassword"
+            id="address1-field"
+            type="text"
+            name="address1"
+            label="Address1"
             className={classes.textField}
-            onChange={handleChange}
+            onChange={handleAddressChange}
             margin="normal"
           />
-          </div>
-          <div>
-          <NativeSelect
+          <br />
+          <TextField
             required
-            id="role-field"
-            type="role"
-            name="role"
-            label="Role"
-            className={classes.selectEmpty}
-            onChange={handleChange}
-            inputProps={{ 'aria-label': 'age' }}
-          >
-            <option value="">Role*</option>
-            <option value={10}>Gamer</option>
-            <option value={20}>Brand</option>
-            <option value={30}>Agency</option>
-            <option value={40}>Other (Specify)</option>
-          </NativeSelect>
-          </div>
-
+            id="city-field"
+            type="text"
+            name="city"
+            label="City"
+            className={classes.textField}
+            onChange={handleAddressChange}
+            margin="normal"
+          />
+          <br />
+          <TextField
+            required
+            id="state-field"
+            type="text"
+            name="state"
+            label="State"
+            className={classes.textField}
+            onChange={handleAddressChange}
+            margin="normal"
+          />
+          <br />
+          <TextField
+            required
+            id="zipcode-field"
+            type="text"
+            name="zipcode"
+            label="Zipcode"
+            className={classes.textField}
+            onChange={handleAddressChange}
+            margin="normal"
+          />
+          <br />
+          <TextField
+            required
+            id="country-field"
+            type="text"
+            name="country"
+            label="Country"
+            className={classes.textField}
+            onChange={handleAddressChange}
+            margin="normal"
+          />
+          <br />
           <Button
             type="submit"
             className={classes.button}
           >
-            Sign Up
+            Sign In - Up
           </Button>
-
+          <br />
+          <Button
+            type="submit"
+            className={classes.button}
+          >
+            Sign Out
+          </Button>
         </form>
 
       </Paper>
 
-      // <div classsName={classes.root}>
-      // <FormControl className={classes.formControl}>
-      //   <InputLabel htmlFor="age-native-simple">Age</InputLabel>
-      //   <Select
-      //     native
-      //     value={state.role}
-      //     onChange={handleChange('role')}
-      //     inputProps={{
-      //       name: 'role',
-      //       id: 'role-native-simple',
-      //     }}
-      //   >
-      //     <option value="" />
-      //     <option value={10}>Gamer</option>
-      //     <option value={20}>Brand</option>
-      //     <option value={30}>Agency</option>
-      //     <option value={30}>Other (Specify)</option>
-      //   </Select>
-      // </FormControl>
-      // </div>
     )
   }
 }

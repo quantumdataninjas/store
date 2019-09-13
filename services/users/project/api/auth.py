@@ -9,9 +9,21 @@ from project.api.models import (
 from project import db, argon2
 from project.utils import validate_email
 
-
 auth_blueprint = Blueprint('auth', __name__)
 api = Api(auth_blueprint)
+
+
+class Ping(Resource):
+    """
+    Ping Pong
+    """
+
+    def get(self):
+        # addresses = UserAddress.query.all()
+        return {
+            "message": "pong!",
+            # "data": [address.to_dict() for address in addresses]
+        }, 200
 
 
 class Signup(Resource):
@@ -26,12 +38,14 @@ class Signup(Resource):
                 "message": "Invalid payload."
             }, 400
         try:
+            print('enter getJSONResult', flush=True)
+
             username = post_data["username"]
             email = post_data["email"]
             if not validate_email(email):
                 return {
                     "message": f"{email} is not a valid email."
-                }
+                }, 400
             if User.query.filter_by(email=email).first():
                 return {
                     "message": f"User {email} already exists."
@@ -49,11 +63,20 @@ class Signup(Resource):
                 db.session.commit()
             post_data["simple_user_id"] = simple_user.id
 
+
+            print('enter getJSONResult', flush=True)
+
             new_address = Address(**post_data["address"])
+
+            print('enter getJSONResult', flush=True)
             db.session.add(new_address)
             db.session.commit()
+
+
             post_data["main_address_id"] = new_address.id
             del post_data["address"]
+
+
 
             post_data["password_hash"] = post_data["password"]
             del post_data["password"]
@@ -87,7 +110,7 @@ class Signup(Resource):
             }, 400
 
 
-@auth_blueprint.route('/auth/login', methods=['POST'])
+#@auth_blueprint.route('/auth/login', methods=['POST']) #todo delete
 class Signin(Resource):
     """
     Signin Api
@@ -120,5 +143,6 @@ class Signin(Resource):
             }, 500
 
 
-api.add_resource(Signup, "/auth/signup")
-api.add_resource(Signin, "/auth/signin")
+api.add_resource(Ping, "/users/auth/ping")
+api.add_resource(Signup, "/users/auth/signup")
+api.add_resource(Signin, "/users/auth/signin")

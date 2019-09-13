@@ -12,6 +12,22 @@ from project.api.models import (
 simple_user_dict = {"email": "user@test.org"}
 simple_user_dict2 = {"email": "user2@test.org"}
 user_dict = {
+    "username": "user",
+    "email": "user@test.org",
+    "password": "password",
+    "firstname": "first",
+    "lastname": "last",
+    "address": {
+        "address1": "1523 John St",
+        "city": "Fort Lee",
+        "state": "NJ",
+        "zipcode": "07024",
+        "country": "United States",
+    },
+    "birthday": str(datetime(1990, 1, 1))
+}
+
+user_dict1 = {
     "simple_user_id": 1,
     "username": "user",
     "email": "user@test.org",
@@ -30,8 +46,9 @@ user_dict = {
         "country": "United States",
     },
     "phone": None,
-    "birthday": str(datetime(1990, 1, 1)),
+    "birthday": str(datetime(1990, 1, 1))
 }
+
 user_dict2 = {
     "simple_user_id": 2,
     "username": "user2",

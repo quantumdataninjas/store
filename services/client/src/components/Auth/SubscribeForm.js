@@ -53,10 +53,10 @@ export class SubscribeForm extends Component {
   }
 
   handleChange(event) {
-    this.setState({email: event.target.value})
-    //this.setState({
-    //  [event.target.name]: event.target.value
-    //})
+    // this.setState({email: event.target.value})
+    this.setState({
+     [event.target.name]: event.target.value
+    })
   }
 
   handleSubmit(event) {
@@ -90,9 +90,9 @@ export class SubscribeForm extends Component {
           <TextField
             required
             id="email-field"
-            type="email-type"
-            name="email-name"
-            label="Email-label"
+            type="email"
+            name="email"
+            label="Enter Email"
             className={classes.textField}
             onChange={handleChange}
             margin="normal"

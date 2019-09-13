@@ -3,3 +3,4 @@ set FLASK_ENV=development
 set APP_SETTINGS=project.config.DevelopmentConfig
 set DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
 set DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
+set REACT_APP_USERS_SERVICE_URL=http://localhost

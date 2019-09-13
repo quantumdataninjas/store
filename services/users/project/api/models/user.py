@@ -98,7 +98,7 @@ class User(db.Model):
     unsubscribed_at = db.Column(
         db.DateTime, index=True, nullable=True
     )
-    
+
     def set_password_hash(self, password):
         # self.password_hash = bcrypt.generate_password_hash(password)
         self.password_hash = argon2.generate_password_hash(
