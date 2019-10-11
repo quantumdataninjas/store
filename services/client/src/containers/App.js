@@ -6,10 +6,12 @@ import SimpleUsersContainer from './Users/SimpleUsersContainer'
 import UsersContainer from './Users/UsersContainer'
 import SubscribeForm from 'components/Auth/SubscribeForm'
 import SignupForm from 'components/Auth/SignupForm'
+//import NavBarContainer from '../containers/NavBarContainer'
 import ProductsContainer from '../containers/ProductsContainer'
 import CartContainer from '../containers/CartContainer'
 import { Paper, Typography } from '@material-ui/core'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import Nav from 'components/Nav'
 
 
 class App extends Component {
@@ -35,6 +37,7 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={muiTheme}>
         <div className="App">
+          <Nav />
           <SubscribeForm />
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
