@@ -19,13 +19,15 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
-    // padding: 20,
+    //padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
+    margin: theme.spacing(2)
   },
   form: {
     margin: theme.spacing(2),
+    //marginTop: theme.spacing(10)
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -44,6 +46,7 @@ const styles = theme => ({
     padding: '0 30px',
     marginTop: 20,
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    margin: theme.spacing(1)
   },
 })
 
@@ -143,6 +146,17 @@ export class SignupForm extends Component {
           <br />
           <TextField
             required
+            id="email-field"
+            type="email"
+            name="email"
+            label="Email"
+            className={classes.textField}
+            onChange={handleChange}
+            margin="normal"
+          />
+          <br />
+          <TextField
+            required
             id="firstname-field"
             type="text"
             name="firstname"
@@ -151,24 +165,12 @@ export class SignupForm extends Component {
             onChange={handleChange}
             margin="normal"
           />
-          <br />
           <TextField
             required
             id="lastname-field"
             type="text"
             name="lastname"
             label="Last Name"
-            className={classes.textField}
-            onChange={handleChange}
-            margin="normal"
-          />
-          <br />
-          <TextField
-            required
-            id="email-field"
-            type="email"
-            name="email"
-            label="Email"
             className={classes.textField}
             onChange={handleChange}
             margin="normal"
@@ -216,7 +218,6 @@ export class SignupForm extends Component {
             onChange={handleAddressChange}
             margin="normal"
           />
-          <br />
           <TextField
             required
             id="state-field"
@@ -227,7 +228,6 @@ export class SignupForm extends Component {
             onChange={handleAddressChange}
             margin="normal"
           />
-          <br />
           <TextField
             required
             id="zipcode-field"
@@ -254,14 +254,13 @@ export class SignupForm extends Component {
             type="submit"
             className={classes.button}
           >
-            Sign In - Up
+            Sign Up
           </Button>
-          <br />
           <Button
             type="submit"
             className={classes.button}
           >
-            Sign Out
+            Login
           </Button>
         </form>
 
