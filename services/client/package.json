@@ -39,7 +39,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "history": "^4.9.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
